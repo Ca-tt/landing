@@ -1,0 +1,5 @@
+User-Agent: *
+Disallow:
+
+Sitemap: http://start.expandplatform.com/sitemap.xml
+Host: start.expandplatform.com
