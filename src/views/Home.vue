@@ -11,14 +11,13 @@ import ArrowDownIcon from '@svg/ArrowDownIcon.vue';
       data-tilda-formskey="fdbccf67f11802593467bcdfb5378947" data-tilda-cookie="no" data-tilda-lazy="yes"
       data-tilda-project-lang="UK" data-tilda-root-zone="one">
       <div id="rec622692138" class="r t-rec" style="" data-animationappear="off" data-record-type="360">
-
       </div>
+
+      <!-- ? loading line indicator -->
       <div id="rec622692139" class="r t-rec" style="" data-animationappear="off" data-record-type="602">
-        <!-- T602 -->
         <div class="t602">
           <div class="t602__indicator" style=""></div>
         </div>
-
       </div>
 
       <!-- ? cover -->
@@ -27,16 +26,14 @@ import ArrowDownIcon from '@svg/ArrowDownIcon.vue';
           <!-- ? logo -->
           <div class="t-cover__carrier loaded" id="coverCarry622692141" data-content-cover-id="622692141"
             data-content-cover-bg="/images/tild3836-3031-4165-b739-393463636135__img_20220906_230151_.jpg"
-            data-display-changed="true" data-content-cover-height="110vh" data-content-cover-parallax="dynamic"
+            data-display-changed="true" data-content-cover-height="120vh" data-content-cover-parallax="dynamic"
             data-content-use-image-for-mobile-cover=""
             style="height: 120vh; background-attachment: scroll; background-image: url('/images/tild3836-3031-4165-b739-393463636135__img_20220906_230151_.jpg'); background-attachment: scroll"
             itemscope itemtype="http://schema.org/ImageObject">
             <meta itemprop="image" content="/images/tild3836-3031-4165-b739-393463636135__img_20220906_230151_.jpg" />
           </div>
-          <div class="t-cover__filter" style="
-              height: 120vh;
-              background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));"></div>
-          <div class="t-container">
+          <div class="t-cover__filter"></div>
+          <div class="t-container filter-container">
             <div class="t-col t-col_12">
               <div class="t-cover__wrapper t-valign_top" style="height: 90vh">
                 <div class="t216 t-align_center">
@@ -52,8 +49,8 @@ import ArrowDownIcon from '@svg/ArrowDownIcon.vue';
                       </div>
                       <h1 class="t216__title t-title t-title_xl" field="title">
                         Преміальні курси програмування
-                        <p class="mb-3"></p>Європейський рівень викладання
                       </h1>
+                      <h3 class="subtitle fw-light">Європейський рівень викладання</h3>
                       <span class="space"></span>
                     </div>
                   </div>
@@ -452,7 +449,7 @@ import ArrowDownIcon from '@svg/ArrowDownIcon.vue';
                         <div class="t605__bgimg t605__img_circle t-bgimg"
                           data-original="/images/tild6639-6137-4663-b166-313334346432__m1.jpg"
                           bgimgfield="li_img__9747513717601" data-animate-order="1" style="
-                            background-image: url('/images/tild6639-6137-4663-b166-313334346432__-__resizeb__20x__m1.jpg');
+                            background-image: url('/images/tild6639-6137-4663-b166-313334346432__m1.jpg');
                           " itemscope itemtype="http://schema.org/ImageObject">
                           <meta itemprop="image" content="/images/tild6639-6137-4663-b166-313334346432__m1.jpg" />
                         </div>
@@ -480,7 +477,7 @@ import ArrowDownIcon from '@svg/ArrowDownIcon.vue';
                         <div class="t605__bgimg t605__img_circle t-bgimg"
                           data-original="/images/tild6338-3033-4235-a133-626434326231__f1.jpg"
                           bgimgfield="li_img__9747513717600" data-animate-order="1" style="
-                            background-image: url('/images/tild6338-3033-4235-a133-626434326231__-__resizeb__20x__f1.jpg');
+                            background-image: url('/images/tild6338-3033-4235-a133-626434326231__f1.jpg');
                           " itemscope itemtype="http://schema.org/ImageObject">
                           <meta itemprop="image" content="/images/tild6338-3033-4235-a133-626434326231__f1.jpg" />
                         </div>
@@ -508,7 +505,7 @@ import ArrowDownIcon from '@svg/ArrowDownIcon.vue';
                         <div class="t605__bgimg t605__img_circle t-bgimg"
                           data-original="/images/tild3634-3064-4133-a466-376562343933__m2.jpg"
                           bgimgfield="li_img__9747513717602" data-animate-order="1" style="
-                            background-image: url('/images/tild3634-3064-4133-a466-376562343933__-__resizeb__20x__m2.jpg');
+                            background-image: url('/images/tild3634-3064-4133-a466-376562343933__m2.jpg');
                           " itemscope itemtype="http://schema.org/ImageObject">
                           <meta itemprop="image" content="/images/tild3634-3064-4133-a466-376562343933__m2.jpg" />
                         </div>
@@ -914,15 +911,9 @@ import ArrowDownIcon from '@svg/ArrowDownIcon.vue';
  * ! Cover section
  */
 
-.t216__title {
-  font-size: 2.25rem;
-  text-align: center;
-  word-break: auto-phrase;
-  overflow-wrap: break-word;
-
-  @include media.tablet {
-    font-size: 3.5rem;
-    // max-width: 80%;
+.filter-container {
+  @include media.desktop {
+    max-width: 50%;
   }
 }
 
@@ -932,7 +923,46 @@ import ArrowDownIcon from '@svg/ArrowDownIcon.vue';
   width: auto;
 }
 
+.t-cover__filter {
+  height: 120vh;
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
 
+  @include media.desktop {
+    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7));
+  }
+}
+
+/**
+* ? logo
+*/
+.t216__blocklogo {
+  padding: 2.5rem 0 1.5rem 0;
+}
+
+.t216__title {
+  font-size: 2.5rem;
+  text-align: center;
+  word-break: auto-phrase;
+  overflow-wrap: break-word;
+  margin: 0 0 1rem 0;
+  padding: 0;
+
+  @include media.tablet {
+    margin: 0;
+    font-size: 4rem;
+    font-weight: 600;
+  }
+}
+
+.subtitle {
+  @include media.tablet {
+    margin: 1.5rem 0 0 0;
+  }
+}
+
+/**
+ * ?  arrow
+ */
 .arrow-link {
   display: inline-block;
   max-width: 40px;
