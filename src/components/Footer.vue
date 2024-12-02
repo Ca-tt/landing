@@ -1,8 +1,4 @@
 <script setup lang="ts">
-/* images */
-const meHalfFaceBeforeLoaded = "url('/images/curly-hair/curly-hair-before-load.jpg')"
-const meHalfFaceLoaded = "/images/curly-hair/curly-hair-loaded.jpg"
-
 /* svg icons */
 import PhoneIcon from '@svg/social-icons/PhoneIcon.vue';
 import ViberIcon from '@svg/social-icons/ViberIcon.vue';
@@ -15,7 +11,7 @@ const iconSize = 54;
 
 <template>
   <!-- footer (contacts) -->
-  <div id="contacts" class="r t-rec t-rec_pt_90 t-rec_pb_90"
+  <div id="contacts" class="footer r t-rec t-rec_pt_90 t-rec_pb_90"
     style="padding-top: 90px; padding-bottom: 90px; background-color: #efefef" data-record-type="578"
     data-bg-color="#efefef">
     <!-- t578-->
@@ -29,8 +25,7 @@ const iconSize = 54;
             <div class="t578__imgwrapper t-margin_auto" style="width: 250px">
 
               <!-- ? image -->
-              <div class="t578__bgimg t-margin_auto t-bgimg" :data-original="meHalfFaceLoaded" bgimgfield="img"
-                :style="{ backgroundImage: meHalfFaceLoaded }" itemscope itemtype="http://schema.org/ImageObject">
+              <div class="t578__bgimg t-margin_auto t-bgimg" itemscope itemtype="http://schema.org/ImageObject">
                 <meta itemprop="image" content="/images/compressed-curly-hair.jpg" />
               </div>
             </div>
@@ -50,7 +45,8 @@ const iconSize = 54;
 
 
           <div class="t-sociallinks">
-            <ul role="list" class="t-sociallinks__wrapper m-0 p-0 d-flex column-gap-2 justify-content-center" aria-label="Social media links">
+            <ul role="list" class="t-sociallinks__wrapper m-0 p-0 d-flex column-gap-2 justify-content-center"
+              aria-label="Social media links">
 
               <!-- ? soclinks -->
               <li class="t-sociallinks__item t-sociallinks__item_phone">
@@ -86,6 +82,11 @@ const iconSize = 54;
 </template>
 
 <style lang="scss" scoped>
+.footer {
+  --footer-image: url("/images/curly-hair/curly-hair-loaded.jpg");
+}
 
-
+.t578__bgimg {
+  background-image: var(--footer-image);
+}
 </style>

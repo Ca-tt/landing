@@ -5,7 +5,6 @@ import ArrowDownIcon from '@svg/ArrowDownIcon.vue';
 
 <template>
   <main>
-    <!--allrecords-->
     <div id="allrecords" data-tilda-export="yes" class="t-records" data-hook="blocks-collection-content-node"
       data-tilda-project-id="5378947" data-tilda-page-id="38526013"
       data-tilda-formskey="fdbccf67f11802593467bcdfb5378947" data-tilda-cookie="no" data-tilda-lazy="yes"
@@ -21,21 +20,20 @@ import ArrowDownIcon from '@svg/ArrowDownIcon.vue';
       </div>
 
       <!-- ? cover -->
-      <div id="rec622692141" class="r t-rec" style="" data-animationappear="off" data-record-type="244">
+      <div id="rec622692141" class="r t-rec cover-wrapper" style="" data-animationappear="off" data-record-type="244">
         <div class="t-cover" id="recorddiv622692141" bgimgfield="img">
           <!-- ? logo -->
           <div class="t-cover__carrier loaded" id="coverCarry622692141" data-content-cover-id="622692141"
             data-content-cover-bg="/images/tild3836-3031-4165-b739-393463636135__img_20220906_230151_.jpg"
-            data-display-changed="true" data-content-cover-height="120vh" data-content-cover-parallax="dynamic"
-            data-content-use-image-for-mobile-cover=""
-            style="height: 120vh; background-attachment: scroll; background-image: url('/images/tild3836-3031-4165-b739-393463636135__img_20220906_230151_.jpg'); background-attachment: scroll"
+            data-display-changed="true" data-content-cover-parallax="dynamic"
+            style="background-attachment: scroll; background-image: url('/images/tild3836-3031-4165-b739-393463636135__img_20220906_230151_.jpg'); background-attachment: scroll"
             itemscope itemtype="http://schema.org/ImageObject">
             <meta itemprop="image" content="/images/tild3836-3031-4165-b739-393463636135__img_20220906_230151_.jpg" />
           </div>
           <div class="t-cover__filter"></div>
           <div class="t-container filter-container">
             <div class="t-col t-col_12">
-              <div class="t-cover__wrapper t-valign_top" style="height: 90vh">
+              <div class="t-cover__wrapper t-valign_top">
                 <div class="t216 t-align_center">
                   <div data-hook-content="covercontent">
                     <div class="t216__wrapper">
@@ -902,6 +900,27 @@ import ArrowDownIcon from '@svg/ArrowDownIcon.vue';
  * ! Cover section
  */
 
+.cover-wrapper {
+  --mobile-cover-height: 110vh;
+  --desktop-cover-height: 100vh;
+}
+
+.t-cover {
+  height: var(--mobile-cover-height);
+
+  @include media.tablet {
+    height: var(--desktop-cover-height);
+  }
+}
+
+.t-cover__carrier {
+  height: var(--mobile-cover-height);
+
+  @include media.tablet {
+    height: var(--desktop-cover-height);
+  }
+}
+
 .filter-container {
   @include media.desktop {
     max-width: 50%;
@@ -912,14 +931,20 @@ import ArrowDownIcon from '@svg/ArrowDownIcon.vue';
   display: block;
   word-break: normal;
   width: auto;
+  height: var(--mobile-cover-height);
+
+  @include media.tablet {
+    height: var(--desktop-cover-height);
+  }
 }
 
 .t-cover__filter {
-  height: 120vh;
+  height: var(--mobile-cover-height);
   background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
 
   @include media.desktop {
     background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7));
+    height: var(--desktop-cover-height);
   }
 }
 
@@ -960,5 +985,12 @@ import ArrowDownIcon from '@svg/ArrowDownIcon.vue';
 .arrow-link {
   display: inline-block;
   max-width: 40px;
+}
+
+/**
+* ? compare table
+*/
+.t613__title  {
+  font-size: 1rem;
 }
 </style>
