@@ -9,6 +9,7 @@
     "paths": {
       "@/*": ["./src/*"],
       "@svg/*": ["./src/assets/svg/*"],
+      "@scss/*": ["./src/scss/*"],
     }
   }
 }

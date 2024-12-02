@@ -1,0 +1,12 @@
+@import '@scss/base/media.scss';
+
+
+.col {
+
+    &.md-6,
+    &.md\:6 {
+        @include tablet {
+            max-width: 50%;
+        }
+    }
+}

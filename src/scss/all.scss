@@ -1,0 +1,19 @@
+/* foundation */
+@import '@scss/base/custom-reset.scss';
+@import '@scss/base/colors.scss';
+@import '@scss/base/fonts.scss';
+@import '@scss/base/size.scss';
+@import '@scss/base/space.scss';
+@import '@scss/base/media.scss';
+
+/* customization */
+@import '@scss/custom/bootstrap.scss';
+@import '@scss/custom/vitepress.scss';
+@import '@scss/custom/naive.scss';
+
+/* cross-files helpers */
+@import '@scss/helpers/display.scss';
+@import '@scss/helpers/flex.scss';
+@import '@scss/helpers/position.scss';
+@import '@scss/helpers/transition.scss';
+@import '@scss/helpers/appearance.scss';

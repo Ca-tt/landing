@@ -1,0 +1,89 @@
+@import "@scss/base/media.scss";
+
+/* plan picker */
+
+.plan-picker {
+
+    .n-carousel {
+        padding: .5rem 0;
+    }
+
+    .n-carousel__arrow-group {
+        bottom: -5px !important;
+        left: 50%;
+        margin-left: -34px;
+    }
+}
+
+
+/* project picker */
+.filter-drawer-project-picker {
+
+    /* steps */
+    .n-step-content-header,
+    .n-step-content-header__title {
+        margin: 0 !important;
+    }
+
+    .n-step-content__description {
+        margin: 0 0 1rem 1rem !important;
+    }
+
+    /* slider marks */
+    .n-slider-mark {
+        font-size: 0.85rem;
+
+        @include tablet {
+            font-size: 1rem;
+        }
+    }
+}
+
+/* project picker collapse */
+.collapse-title {
+    .n-collapse-item__header-main {
+        font-size: 1.75rem !important;
+    }
+}
+
+.project-picker {
+
+    /* project card */
+    .n-card-header {
+        display: block;
+
+        @include tablet {
+            display: flex;
+            font-size: 1.5rem;
+        }
+    }
+
+    .n-card-header__main {
+        word-break: break-all;
+        overflow-wrap: break-word;
+        font-size: 1.5rem;
+
+        @include tablet {
+            font-size: 2rem;
+        }
+    }
+
+    .n-tabs .n-tabs-tab .n-tabs-tab__label {
+        font-size: 0.9rem;
+    }
+
+    .n-card__content,
+    .n-card__action {
+        padding: .5rem !important;
+
+        @include tablet {
+            padding: .5rem 1rem !important;
+        }
+    }
+
+    .n-card__action {
+        @include tablet {
+            padding: 0 !important;
+        }
+    }
+}

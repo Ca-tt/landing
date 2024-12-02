@@ -1,0 +1,40 @@
+/* blacks and whites */
+$black: #100f0fdc;
+$white: #fff;
+$white-milk: #eee7e7dc;
+
+/* greys */
+$gray: #36413e;
+
+/* reds */
+$red: #e62428;
+$burgundy: #511717;
+$black-red: #2e0c0c;
+
+/* yellows */
+$yellow: rgba(255, 255, 197, 0.86);
+
+/* greens */
+$light-green: #5cdb93;
+
+
+:root {
+  --soft-gray: #ECF0F1;
+}
+
+
+/*==   LIBRARY COLORS   ==*/
+$naive-green: #18a058;
+$naive-red: #de576d;
+
+
+/*==   HELPERS   ==*/
+.base-color {
+  // color: $base-font-color;
+}
+
+.is-soft-gray,
+.with-soft-gray-bg,
+.soft-gray-bg {
+  background: var(--soft-gray);
+}

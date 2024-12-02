@@ -1,0 +1,48 @@
+// gaps: margins
+// fills: paddings
+
+// small, medium, large, xl sizes
+// mobile, tablet, desktop sizes
+// general sizes as constants
+$xs: 0.25rem;
+$extra-small: 0.25rem;
+
+$sm: 0.5rem;
+$small: 0.5rem;
+
+$regular: 1rem;
+$regular-l: 1.25rem;
+$regular-large: 1.25rem;
+
+$large: 1.5rem;
+$extra-large: 2rem;
+$xl: 2rem;
+
+$xxl: 3rem;
+$huge: 3rem;
+
+
+.h-100,
+.height-100,
+.full-height,
+.has-full-height {
+  min-height: 100vh;
+}
+
+.w-100,
+.full-width {
+  width: 100%;
+}
+
+.w-auto {
+  width: auto;
+}
+
+.base-100,
+.base-full {
+  flex-basis: 100%;
+}
+
+.mw-50 {
+  max-width: 50%;
+}

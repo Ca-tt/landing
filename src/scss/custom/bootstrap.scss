@@ -1,0 +1,22 @@
+:root {
+    /* theme */
+    --bs-body-font-family: Inter, Arial, sans-serif;
+    --bs-font-monospace: var(--vp-font-family-mono);
+} 
+
+code {
+    --code-letter-spacing: 0 !important;
+}
+
+.btn-primary {
+    --bs-btn-bg: #2a87e5;
+    --bs-btn-color: white;
+}
+
+/* disable container on small devices */
+@media (min-width: 576px) {
+    .container,
+    .container-sm {
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,16 @@
+.no-border,
+.border-0 {
+    border: 0;
+}
+
+.border-0-i, .no-border-i {
+    border: 0 !important; 
+}
+
+.rounded {
+    border-radius: 20px;
+}
+
+.no-decoration {
+    text-decoration: none;
+}

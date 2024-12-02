@@ -13,7 +13,8 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
-      '@svg': fileURLToPath(new URL('./src/assets/svg', import.meta.url))
+      '@svg': fileURLToPath(new URL('./src/assets/svg', import.meta.url)),
+      '@scss': fileURLToPath(new URL('./src/scss/', import.meta.url)),
     },
   },
 })

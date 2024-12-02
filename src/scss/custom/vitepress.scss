@@ -1,0 +1,313 @@
+@import '@scss/base/media.scss';
+
+:root {
+  --vp-c-default-1: var(--vp-c-gray-1);
+  --vp-c-default-2: var(--vp-c-gray-2);
+  --vp-c-default-3: var(--vp-c-gray-3);
+  --vp-c-default-soft: var(--vp-c-gray-soft);
+
+  --vp-c-brand-1: var(--vp-c-indigo-1);
+  --vp-c-brand-2: var(--vp-c-indigo-2);
+  --vp-c-brand-3: var(--vp-c-indigo-3);
+  --vp-c-brand-soft: var(--vp-c-indigo-soft);
+
+  --vp-c-tip-1: var(--vp-c-brand-1);
+  --vp-c-tip-2: var(--vp-c-brand-2);
+  --vp-c-tip-3: var(--vp-c-brand-3);
+  --vp-c-tip-soft: var(--vp-c-brand-soft);
+
+  --vp-c-warning-1: var(--vp-c-yellow-1);
+  --vp-c-warning-2: var(--vp-c-yellow-2);
+  --vp-c-warning-3: var(--vp-c-yellow-3);
+  --vp-c-warning-soft: var(--vp-c-yellow-soft);
+
+  --vp-c-danger-1: var(--vp-c-red-1);
+  --vp-c-danger-2: var(--vp-c-red-2);
+  --vp-c-danger-3: var(--vp-c-red-3);
+  --vp-c-danger-soft: var(--vp-c-red-soft);
+}
+
+/**
+ * Component: Button
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-button-brand-border: transparent;
+  --vp-button-brand-text: var(--vp-c-white);
+  --vp-button-brand-bg: var(--vp-c-brand-3);
+  --vp-button-brand-hover-border: transparent;
+  --vp-button-brand-hover-text: var(--vp-c-white);
+  --vp-button-brand-hover-bg: var(--vp-c-brand-2);
+  --vp-button-brand-active-border: transparent;
+  --vp-button-brand-active-text: var(--vp-c-white);
+  --vp-button-brand-active-bg: var(--vp-c-brand-1);
+}
+
+/**
+ * Component: Home
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: -webkit-linear-gradient(120deg,
+      #bd34fe 30%,
+      #41d1ff);
+
+  --vp-home-hero-image-background-image: linear-gradient(-45deg,
+      #bd34fe 50%,
+      #47caff 50%);
+  --vp-home-hero-image-filter: blur(44px);
+}
+
+@media (min-width: 640px) {
+  :root {
+    --vp-home-hero-image-filter: blur(56px);
+  }
+}
+
+@media (min-width: 960px) {
+  :root {
+    --vp-home-hero-image-filter: blur(68px);
+  }
+}
+
+:root {
+  --vp-custom-block-tip-border: transparent;
+  --vp-custom-block-tip-text: var(--vp-c-text-1);
+  --vp-custom-block-tip-bg: var(--vp-c-brand-soft);
+  --vp-custom-block-tip-code-bg: var(--vp-c-brand-soft);
+}
+
+.DocSearch {
+  --docsearch-primary-color: var(--vp-c-brand-1) !important;
+}
+
+/* Global */
+
+// img {
+//   display: inline-block !important;
+// }
+
+.vp-doc .btn-primary {
+  transition: .5s;
+  color: white;
+}
+
+/* increase website width */
+.container {
+  @include desktop {
+    max-width: 1200px !important;
+  }
+}
+
+
+/* navber */
+.VPNavBar .wrapper {
+  padding: 0 .5rem !important;
+}
+
+/* navbar dropdown */
+.VPMenuGroup .title,
+.VPNavScreenMenuGroupSection .title {
+  margin: 0;
+}
+
+/* burger menu (mobile) */
+.VPNavScreen .container {
+  max-width: 90%;
+
+  @include mobile-l {
+    max-width: 80%;
+  }
+}
+
+/* nav with sidebars  */
+.VPNavBar.has-sidebar .container {
+  @include desktop {
+    max-width: 100% !important;
+  }
+}
+
+/* svg icons */
+.VPSocialLink>svg {
+  width: 30px !important;
+  height: 30px !important;
+}
+
+
+/* home content section */
+.VPHero {
+  padding: .5rem !important;
+  margin: 1.5rem 0 !important;
+
+  @include tablet {
+    margin: 1.5rem 0 !important;
+    padding: 1.5rem !important;
+  }
+
+  /* colored tagline */
+  .name {
+    font-size: 3rem;
+    line-height: 3rem;
+
+    @include tablet {
+      font-size: 4rem;
+      line-height: 4rem;
+      max-width: 768px;
+    }
+  }
+
+
+  /* long text */
+  .text {
+    word-break: break-word;
+
+    @include mobile-l {
+      word-break: normal;
+    }
+  }
+
+  /* buttons */
+  .actions {
+    padding: 0;
+    margin: 0 0 0 -5px;
+  }
+}
+
+
+/* home features */
+.VPFeatures {
+  padding: 0;
+
+  @include mobile-l {
+    padding: 0 1rem !important;
+  }
+
+  /* features cards (grid) */
+  .item {
+    @include tablet {
+      width: 50% !important;
+    }
+
+    @include desktop {
+      width: 33.3% !important;
+    }
+  }
+
+  .title {
+    font-size: 1.2rem;
+  }
+
+  .details {
+    font-size: 0.9rem;
+  }
+
+}
+
+
+
+/* vp-doc container */
+.VPDoc {
+  padding: 0 !important;
+}
+
+/* doc pages titles */
+.vp-doc h1 {
+  padding: 2rem 0 0 0;
+  margin: 0;
+}
+
+.vp-doc h2 {
+  padding: 1rem 0 0 0;
+  margin: 1.5rem 0 0 0;
+}
+
+/*  sidebar (left) */
+:root {
+  --vp-sidebared-content-width: 100%;
+}
+
+.VPSidebar {}
+
+.VPSidebarItem .text {
+  margin: 0;
+}
+
+
+/* prev / next */
+@media (min-width: 640px) {
+  .prev-next {
+    display: flex !important;
+    justify-content: space-between;
+  }
+
+  .prev-next .pager {
+    flex: 0 0 40%;
+  }
+}
+
+
+/* only desktop applied */
+@media (min-width: 960px) {
+  .VPDoc:not(.has-sidebar) .container {
+    justify-content: space-between !important;
+    max-width: 1200px !important;
+  }
+
+  .VPDoc:not(.has-sidebar) .container .aside {
+    order: 0;
+    padding: 0;
+  }
+
+  .VPDoc:not(.has-sidebar) .container .content {
+    order: 1;
+    width: var(--vp-sidebared-content-width) !important;
+    max-width: var(--vp-sidebared-content-width) !important;
+  }
+
+  .content[data-v-8f2595f9] {
+    padding: 0 !important;
+  }
+}
+
+
+/*==   EDITOR CUSTOMIZATION   ==*/
+code {
+  --vp-font-family-mono: var(--vp-font-family-base);
+  --code-font-weight: 600;
+  --code-letter-spacing: 0.05em;
+
+  font-weight: var(--code-font-weight);
+  letter-spacing: var(--code-letter-spacing);
+}
+
+/* code highlighting */
+.vp-doc div[class*='language-'] {
+  max-width: 100%;
+  margin: 0 auto;
+  margin: 1rem 0;
+}
+
+.vp-doc [class*='language-'] code {
+  font-weight: normal;
+}
+
+/* titles */
+@media (min-width: 768px) {
+  .vp-doc h1 {
+    margin: 0 0 1.5rem 0;
+  }
+}
+
+/* dark theme */
+
+html.dark {
+  body {
+    --bs-body-bg: none;
+    --bs-body-color: none;
+  }
+
+  h2 {
+    --bs-heading-color: white;
+  }
+}

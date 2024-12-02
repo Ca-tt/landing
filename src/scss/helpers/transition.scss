@@ -1,0 +1,13 @@
+$base-duration: 0.7s;
+$is-short: 0.3s;
+$is-long: 1s;
+
+
+.base-transition {
+  transition: all $base-duration;
+}
+
+.short-transition,
+.has-short-transition {
+  transition: all $is-short;
+}

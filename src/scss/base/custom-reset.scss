@@ -1,0 +1,30 @@
+/* make consistent width and height */
+* {
+  box-sizing: border-box;
+}
+
+/* don't let images break the parent's size */
+img {
+  max-width: 100%;
+}
+
+/* remove list markers for the God's sake */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* remove awful blue-ish links color and underlines */
+a {
+  color: black;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+pre {
+  text-wrap: wrap;
+  overflow-wrap: break-word;
+}
