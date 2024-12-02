@@ -154,11 +154,6 @@ let iconSize = 42;
 }
 
 /* header blocks */
-.t228 {
-
-}
-.t228__maincontainer {
-}
 
 /* header inner blocks */
 .t228__leftside, .t228__rightside, .t228__centerside {

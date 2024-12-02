@@ -76,7 +76,7 @@ import ArrowDownIcon from '@svg/ArrowDownIcon.vue';
       <div id="features" class="r t-rec" style="" data-record-type="215">
         <a name="features" style="font-size: 0"></a>
       </div>
-      <div id="rec622692143" class="r t-rec t-rec_pt_150 t-rec_pb_150" style="padding-top: 150px; padding-bottom: 150px"
+      <div id="rec622692143" class="r t-rec t-rec_pb_150" style="padding-top: 150px; padding-bottom: 150px"
         data-record-type="490">
         <!-- t490 -->
         <div class="t490">
@@ -182,17 +182,17 @@ import ArrowDownIcon from '@svg/ArrowDownIcon.vue';
       </div>
 
       <!-- ? compare -->
-      <div id="compare" class="r t-rec t-rec_pt_150 t-rec_pb_150"
+      <div id="compare" class="r t-rec t-rec_pb_150"
         style="padding-top: 150px; padding-bottom: 150px; background-color: #eeeeee" data-animationappear="off"
         data-record-type="613" data-bg-color="#eeeeee">
         <!-- T613 -->
         <div class="t613">
           <div class="t-section__container t-container t-container_flex">
             <div class="t-col t-col_12">
-              <div class="t-section__title t-title t-title_xs t-align_center t-margin_auto" field="btitle">
+              <div class="t-section__title t-title t-title_xs t-align_center t-margin_auto mb-3" field="btitle">
                 Якість, яку чуєш та бачиш прямо на уроках
               </div>
-              <div class="t-section__descr t-descr t-descr_xl t-align_center t-margin_auto mb-4" field="bdescr">
+              <div class="t-section__descr t-descr t-descr_xl t-align_center t-margin_auto mb-5" field="bdescr">
                 Навчання у нас різниться від інших курсів<br />Порівняйте самі 🙃
               </div>
             </div>
@@ -393,9 +393,7 @@ import ArrowDownIcon from '@svg/ArrowDownIcon.vue';
         </div>
 
       </div>
-      <div id="rec815740404" class="r t-rec" style="" data-record-type="215">
-        <a name="reviews" style="font-size: 0"></a>
-      </div>
+
       <div id="rec815502760" class="r t-rec t-rec_pt_135 t-rec_pb_135" style="padding-top: 135px; padding-bottom: 135px"
         data-record-type="605">
         <!-- t605 -->
@@ -448,11 +446,11 @@ import ArrowDownIcon from '@svg/ArrowDownIcon.vue';
                       <div class="t-slds__wrapper t-align_center">
                         <div class="t605__bgimg t605__img_circle t-bgimg"
                           data-original="/images/tild6639-6137-4663-b166-313334346432__m1.jpg"
-                          bgimgfield="li_img__9747513717601" data-animate-order="1" style="
-                            background-image: url('/images/tild6639-6137-4663-b166-313334346432__m1.jpg');
-                          " itemscope itemtype="http://schema.org/ImageObject">
+                          bgimgfield="li_img__9747513717601" data-animate-order="1" itemscope
+                          itemtype="http://schema.org/ImageObject">
                           <meta itemprop="image" content="/images/tild6639-6137-4663-b166-313334346432__m1.jpg" />
                         </div>
+
                         <div class="t605__text t-text t-text_md" field="li_text__9747513717601" data-animate-order="2"
                           data-animate-delay="0.3">
                           Я й не думала, що треба стільки всього знати! Але ж як цікаво.
@@ -470,15 +468,15 @@ import ArrowDownIcon from '@svg/ArrowDownIcon.vue';
                       </div>
                     </div>
                   </div>
+
                   <div class="t-slds__item" data-slide-index="2" role="group" aria-roledescription="slide"
                     aria-hidden="true" aria-label="2 из 3">
                     <div class="t-width t-width_7 t-margin_auto">
                       <div class="t-slds__wrapper t-align_center">
                         <div class="t605__bgimg t605__img_circle t-bgimg"
                           data-original="/images/tild6338-3033-4235-a133-626434326231__f1.jpg"
-                          bgimgfield="li_img__9747513717600" data-animate-order="1" style="
-                            background-image: url('/images/tild6338-3033-4235-a133-626434326231__f1.jpg');
-                          " itemscope itemtype="http://schema.org/ImageObject">
+                          bgimgfield="li_img__9747513717600" data-animate-order="1" itemscope
+                          itemtype="http://schema.org/ImageObject">
                           <meta itemprop="image" content="/images/tild6338-3033-4235-a133-626434326231__f1.jpg" />
                         </div>
                         <div class="t605__text t-text t-text_md" field="li_text__9747513717600" data-animate-order="2"
@@ -498,15 +496,15 @@ import ArrowDownIcon from '@svg/ArrowDownIcon.vue';
                       </div>
                     </div>
                   </div>
+
                   <div class="t-slds__item" data-slide-index="3" role="group" aria-roledescription="slide"
                     aria-hidden="true" aria-label="3 из 3">
                     <div class="t-width t-width_7 t-margin_auto">
                       <div class="t-slds__wrapper t-align_center">
                         <div class="t605__bgimg t605__img_circle t-bgimg"
                           data-original="/images/tild3634-3064-4133-a466-376562343933__m2.jpg"
-                          bgimgfield="li_img__9747513717602" data-animate-order="1" style="
-                            background-image: url('/images/tild3634-3064-4133-a466-376562343933__m2.jpg');
-                          " itemscope itemtype="http://schema.org/ImageObject">
+                          bgimgfield="li_img__9747513717602" data-animate-order="1" itemscope
+                          itemtype="http://schema.org/ImageObject">
                           <meta itemprop="image" content="/images/tild3634-3064-4133-a466-376562343933__m2.jpg" />
                         </div>
                         <div class="t605__text t-text t-text_md" field="li_text__9747513717602" data-animate-order="2"
@@ -547,17 +545,10 @@ import ArrowDownIcon from '@svg/ArrowDownIcon.vue';
 
 
         </div>
-
-
-
-
       </div>
-      <div id="rec622692144" class="r t-rec" style="" data-record-type="215">
-        <a name="steps" style="font-size: 0"></a>
-      </div>
-      <div id="rec622692145" class="r t-rec t-rec_pt_120 t-rec_pb_120" style="padding-top: 120px; padding-bottom: 120px"
+
+      <div id="rec622692145" class="r t-rec t-rec_pt_120 t-rec_pb_150" style="padding-top: 120px; padding-bottom: 180px"
         data-record-type="565">
-        <!-- T565 -->
         <div class="t565">
           <div class="t-section__container t-container t-container_flex">
             <div class="t-col t-col_12">
@@ -635,16 +626,16 @@ import ArrowDownIcon from '@svg/ArrowDownIcon.vue';
       <div id="rec622703940" class="r t-rec" style="" data-record-type="215">
         <a name="plans" style="font-size: 0"></a>
       </div>
-      <div id="rec622692150" class="r t-rec t-rec_pt_150 t-rec_pb_150" style="padding-top: 150px; padding-bottom: 150px"
-        data-animationappear="off" data-record-type="1069">
+      <div id="rec622692150" class="r t-rec t-rec_pb_150" style="padding-bottom: 150px" data-animationappear="off"
+        data-record-type="1069">
         <!-- t1069 -->
         <div class="t1069" data-display-changed="true">
           <div class="t-section__container t-container t-container_flex">
             <div class="t-col t-col_12">
-              <div class="t-section__title t-title t-title_xs t-align_center t-margin_auto" field="btitle">
+              <div class="t-section__title t-title t-title_xs t-align_center t-margin_auto mb-3" field="btitle">
                 Королівська знижка на європейський стандарт 👑
               </div>
-              <div class="t-section__descr t-descr t-descr_xl t-align_center t-margin_auto" field="bdescr">
+              <div class="t-section__descr t-descr t-descr_xl t-align_center t-margin_auto mb-5" field="bdescr">
                 Преміальні групові тарифи<br />з реальною знижкою до 20%!
               </div>
             </div>
@@ -768,8 +759,8 @@ import ArrowDownIcon from '@svg/ArrowDownIcon.vue';
 
 
       </div>
-      <div id="rec824296735" class="r t-rec t-rec_pt_150 t-rec_pb_150" style="padding-top: 150px; padding-bottom: 150px"
-        data-animationappear="off" data-record-type="1069">
+      <div id="rec824296735" class="r t-rec t-rec_pb_150" style="padding-bottom: 150px" data-animationappear="off"
+        data-record-type="1069">
         <!-- t1069 -->
         <div class="t1069" data-display-changed="true">
           <div class="t-section__container t-container t-container_flex">
@@ -955,8 +946,11 @@ import ArrowDownIcon from '@svg/ArrowDownIcon.vue';
 }
 
 .subtitle {
+  font-size: 1.75rem;
+
   @include media.tablet {
     margin: 1.5rem 0 0 0;
+    font-size: 2rem;
   }
 }
 

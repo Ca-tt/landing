@@ -30,7 +30,7 @@ const iconSize = 54;
 
               <!-- ? image -->
               <div class="t578__bgimg t-margin_auto t-bgimg" :data-original="meHalfFaceLoaded" bgimgfield="img"
-                :style="{ backgroundImage: meHalfFaceBeforeLoaded }" itemscope itemtype="http://schema.org/ImageObject">
+                :style="{ backgroundImage: meHalfFaceLoaded }" itemscope itemtype="http://schema.org/ImageObject">
                 <meta itemprop="image" content="/images/compressed-curly-hair.jpg" />
               </div>
             </div>
