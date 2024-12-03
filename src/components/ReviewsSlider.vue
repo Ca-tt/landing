@@ -3,6 +3,7 @@
 </script>
 
 <template>
+  <div id="reviews"></div>
   <div id="rec815502760" class="r t-rec t-rec_pt_135 t-rec_pb_135" style="padding-top: 135px; padding-bottom: 135px"
     data-record-type="605">
     <!-- t605 -->

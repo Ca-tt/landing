@@ -1,5 +1,8 @@
 <script setup lang="ts">
-
+let firstContact = {
+  text: "Спробую безкоштовне заняття",
+  link: "tel:+380939679096",
+}
 </script>
 
 <template>
@@ -47,7 +50,7 @@
                   <li data-list="bullet">Фіксація ціни на початку навчання</li>
                 </ul>
               </div>
-              <a href="#rec622692152" class="t-card__link">
+              <a :href="firstContact.link" class="t-card__link">
                 <div class="t-card__btn t-btn t-btn_sm" style="
                         color: #ffffff;
                         background-color: #13ce66;
@@ -55,7 +58,7 @@
                         -moz-border-radius: 30px;
                         -webkit-border-radius: 30px;
                       " data-buttonfieldset="li_button" data-lid="1729970774479">
-                  <span class="t1069__btn-title">Перше заняття — безкоштовне!</span>
+                  <span class="t1069__btn-title">{{ firstContact.text }}</span>
                 </div>
               </a>
             </div>
@@ -81,7 +84,7 @@
                   <li data-list="bullet">Фіксація ціни на початку навчання</li>
                 </ul>
               </div>
-              <a href="#rec622692152" class="t-card__link">
+              <a :href="firstContact.link" class="t-card__link">
                 <div class="t-card__btn t-btn t-btn_sm" style="
                         color: #ffffff;
                         background-color: #13ce66;
@@ -89,7 +92,7 @@
                         -moz-border-radius: 30px;
                         -webkit-border-radius: 30px;
                       " data-buttonfieldset="li_button" data-lid="1701942404473">
-                  <span class="t1069__btn-title">Перше заняття — безкоштовне!</span>
+                  <span class="t1069__btn-title">{{ firstContact.text }}</span>
                 </div>
               </a>
             </div>
@@ -116,7 +119,7 @@
                   <li data-list="bullet">Персональний план навчання та розвитку</li>
                 </ul>
               </div>
-              <a href="#rec622692152" class="t-card__link">
+              <a :href="firstContact.link" class="t-card__link">
                 <div class="t-card__btn t-btn t-btn_sm" style="
                         color: #ffffff;
                         background-color: #13ce66;
@@ -124,7 +127,7 @@
                         -moz-border-radius: 30px;
                         -webkit-border-radius: 30px;
                       " data-buttonfieldset="li_button" data-lid="1659515974295">
-                  <span class="t1069__btn-title">Перше заняття — безкоштовне!</span>
+                  <span class="t1069__btn-title">{{ firstContact.text }}</span>
                 </div>
               </a>
             </div>
@@ -175,7 +178,7 @@
                   <li data-list="bullet">Фіксація ціни на початку навчання</li>
                 </ul>
               </div>
-              <a href="#rec622692152" class="t-card__link">
+              <a :href="firstContact.link" class="t-card__link">
                 <div class="t-card__btn t-btn t-btn_sm" style="
                         color: #ffffff;
                         background-color: #13ce66;
@@ -183,7 +186,7 @@
                         -moz-border-radius: 30px;
                         -webkit-border-radius: 30px;
                       " data-buttonfieldset="li_button" data-lid="9536226921500">
-                  <span class="t1069__btn-title">Перше заняття — безкоштовне!</span>
+                  <span class="t1069__btn-title">{{ firstContact.text }}</span>
                 </div>
               </a>
             </div>
@@ -211,7 +214,7 @@
                   <li data-list="bullet">Фіксація ціни на початку навчання</li>
                 </ul>
               </div>
-              <a href="#rec622692152" class="t-card__link">
+              <a :href="firstContact.link" class="t-card__link">
                 <div class="t-card__btn t-btn t-btn_sm" style="
                         color: #ffffff;
                         background-color: #13ce66;
@@ -219,7 +222,7 @@
                         -moz-border-radius: 30px;
                         -webkit-border-radius: 30px;
                       " data-buttonfieldset="li_button" data-lid="9546226921501">
-                  <span class="t1069__btn-title">Перше заняття — безкоштовне!</span>
+                  <span class="t1069__btn-title">{{ firstContact.text }}</span>
                 </div>
               </a>
             </div>
@@ -247,7 +250,7 @@
                   <li data-list="bullet">Фіксація ціни на початку навчання</li>
                 </ul>
               </div>
-              <a href="#rec622692152" class="t-card__link">
+              <a :href="firstContact.link" class="t-card__link">
                 <div class="t-card__btn t-btn t-btn_sm" style="
                         color: #ffffff;
                         background-color: #13ce66;
@@ -255,7 +258,7 @@
                         -moz-border-radius: 30px;
                         -webkit-border-radius: 30px;
                       " data-buttonfieldset="li_button" data-lid="9546226921502">
-                  <span class="t1069__btn-title">Перше заняття — безкоштовне!</span>
+                  <span class="t1069__btn-title">{{ firstContact.text }}</span>
                 </div>
               </a>
             </div>

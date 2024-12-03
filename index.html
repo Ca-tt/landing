@@ -240,26 +240,23 @@
         max-width: 560px;
       }
 
-      #rec815502760 .t-section__title {
+      #reviews .t-section__title {
         margin-bottom: 90px;
       }
 
-      #rec815502760 .t-section__descr {
-      }
-
       @media screen and (max-width: 960px) {
-        #rec815502760 .t-section__title {
+        #reviews .t-section__title {
           margin-bottom: 40px;
         }
       }
     </style>
 
     <style>
-      #rec815502760 .t-slds__bullet_active .t-slds__bullet_body {
+      #reviews .t-slds__bullet_active .t-slds__bullet_body {
         background-color: #222 !important;
       }
 
-      #rec815502760 .t-slds__bullet:hover .t-slds__bullet_body {
+      #reviews .t-slds__bullet:hover .t-slds__bullet_body {
         background-color: #222 !important;
       }
     </style>
@@ -529,7 +526,7 @@
     </style>
 
     <style>
-      #rec815502760 .t605__descr {
+      #reviews .t605__descr {
         font-size: 16px;
       }
     </style>
@@ -1843,7 +1840,7 @@
     <script>
       t_onReady(function () {
         if (typeof jQuery !== 'undefined') {
-          $('#rec815502760')
+          $('#reviews')
             .find('.t605')
             .bind('displayChanged', function () {
               t_onFuncLoad('t_slds_updateSlider', function () {
@@ -1851,7 +1848,7 @@
               })
             })
         } else {
-          var rec = document.querySelector('#rec815502760')
+          var rec = document.querySelector('#reviews')
           if (!rec) return
           var wrapper = rec.querySelector('.t605')
           if (wrapper) {
