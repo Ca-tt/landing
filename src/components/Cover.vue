@@ -1,5 +1,4 @@
 <script setup lang="ts">
-/* svg icons */
 import ArrowDownIcon from '@svg/ArrowDownIcon.vue';
 </script>
 
@@ -22,7 +21,7 @@ import ArrowDownIcon from '@svg/ArrowDownIcon.vue';
               <div data-hook-content="covercontent">
                 <div class="t216__wrapper">
                   <div class="t216__blocklogo">
-                    <a class="t216__logo-link" href="#features" target="">
+                    <a class="t216__logo-link" href="#features" >
                       <img src="/images/tild3537-6139-4138-b466-373438313637__expand-sqr.png"
                         data-original="/images/tild3537-6139-4138-b466-373438313637__expand-sqr.png"
                         class="t216__logo t-img" imgfield="img2" data-tu-max-width="800" data-tu-max-height="800"
@@ -32,7 +31,7 @@ import ArrowDownIcon from '@svg/ArrowDownIcon.vue';
                   <h1 class="t216__title t-title t-title_xl" field="title">
                     Преміальні курси програмування
                   </h1>
-                  <h3 class="subtitle fw-light">Європейський рівень викладання</h3>
+                  <h3 class="subtitle fw-light text-white fs-2">Європейський рівень викладання</h3>
                   <span class="space"></span>
                 </div>
               </div>
@@ -66,7 +65,7 @@ import ArrowDownIcon from '@svg/ArrowDownIcon.vue';
  */
 
 .cover-wrapper {
-  --mobile-cover-height: 110vh;
+  --mobile-cover-height: 70vh;
   --desktop-cover-height: 100vh;
 }
 
@@ -130,8 +129,8 @@ import ArrowDownIcon from '@svg/ArrowDownIcon.vue';
   padding: 0;
 
   @include media.tablet {
-    margin: 0;
-    font-size: 4rem;
+    margin: 0 0 3rem 0;
+    font-size: 4.5rem;
     font-weight: 600;
   }
 }

@@ -13,7 +13,7 @@
     <div class="t490">
       <div class="t-section__container t-container t-container_flex">
         <div class="t-col t-col_12">
-          <div class="t-section__title t-title t-title_xs t-align_center t-margin_auto" field="btitle">
+          <div class="t-section__title t-title t-title_xs t-align_center" field="btitle">
             Авторська методика<br />Індивідуальний підхід до дітей та дорослих
           </div>
         </div>
