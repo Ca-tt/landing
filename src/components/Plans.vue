@@ -12,50 +12,44 @@ const firstContact = {
 
 const groupPlans = [
   {
-    oldPrice: '3 200 грн',
-    title: '«Стандарт х4»',
-    subtitle: '',
-    price: '1 800 грн',
+    oldPrice: 'Вводне заняття',
+    title: 'Для нових студентів',
+    price: 'Безкоштовно',
+    features: [
+      'Особисте знайомство',
+      'Визначаємо ваш поточний рівень',
+      'Консультація 30-45 хвилин',
+      'Фіксуємо ціну на перші півроку',
+    ],
+    id: '2231',
+  },
+  {
+    oldPrice: 'Програмування / English',
+    title: '«Стандарт х4 заняття»',
+    price: '450 грн / урок',
+    featured: true,
     features: [
       '4 заняття на місяць',
       '90-120 хвилин уроку',
       '5 мов програмування на вибір',
-      'Персональні заняття',
-      'Міні-група по 2-3 студента',
+      '75% уроку - розмовляємо англійською',
+      'Міні-група із 2-3 студентів',
       'Особистий план навчання «під ключ»',
     ],
-    lid: '1729970774479',
+    id: '1123',
   },
-  // {
-  //   oldPrice: '8 200 грн',
-  //   title: '«Преміум х8»',
-  //   subtitle: 'Один урок в подарунок!',
-  //   price: '7 100 грн',
-  //   features: [
-  //     '8 занять на місяць',
-  //     '1 заняття за 0 гривень!',
-  //     'Пришвидшений прогресс навчання',
-  //     '5 мов програмування',
-  //     'Персональний план навчання',
-  //     'Фіксація ціни на початку навчання',
-  //   ],
-  //   lid: '1701942404473',
-  //   featured: true,
-  // },
-  // {
-  //   oldPrice: '12 700 грн',
-  //   title: '«Преміум х12»',
-  //   subtitle: 'Два урока в подарунок!',
-  //   price: '10 200 грн',
-  //   features: [
-  //     '12 занятть на місяць',
-  //     '2 заняття за 0 грн!',
-  //     'За місяць проходимо програму двух місяців',
-  //     '5 мов програмування',
-  //     'Персональний план навчання та розвитку',
-  //   ],
-  //   lid: '1659515974295',
-  // },
+  {
+    oldPrice: 'Персональні уроки',
+    title: '«Преміум х4 заняття»',
+    price: '800 грн / урок',
+    features: [
+      '4 заняття на місяць',
+      '60-90 хвилин уроку',
+      'Займаємось удвох з викладачем',
+      'Особистий план навчання «під ключ»',
+    ],
+    id: '3234',
+  },
 ]
 </script>
 
@@ -77,16 +71,14 @@ const groupPlans = [
           </div>
         </div>
       </div>
-
-
       <div class="t-container t-card__container t1069__withfeatured">
         <div class="t1069__row justify-content-center">
-          <div v-for="(plan, idx) in groupPlans" :key="plan.lid"
+          <div v-for="(plan, idx) in groupPlans" :key="plan.id"
             class="t1069__col t-card__col t-col t-col_4 t-align_center" :class="{ 't1069__featured': plan.featured }">
             <div class="t1069__content" style="border: 1px solid #e0e6ed">
               <div class="t-card__title t-name t-name_lg">
                 <div style="font-size: 24px" data-customstyle="yes">
-                  <span style="text-decoration: line-through">{{ plan.oldPrice }}</span>
+                  <span>{{ plan.oldPrice }}</span>
                 </div>
               </div>
               <div class="t-card__uptitle t-descr t-descr_xxs">
@@ -112,7 +104,7 @@ const groupPlans = [
                         border-radius: 30px;
                         -moz-border-radius: 30px;
                         -webkit-border-radius: 30px;
-                      " :data-buttonfieldset="'li_button'" :data-lid="plan.lid">
+                      " :data-buttonfieldset="'li_button'" :data-lid="plan.id">
                   <span class="t1069__btn-title">{{ firstContact.text }}</span>
                 </div>
               </a>
