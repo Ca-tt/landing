@@ -1,5 +1,44 @@
 <script setup lang="ts">
 
+const texts = {
+  menu: [
+    { href: '#features', label: 'Переваги' },
+    { href: '#compare', label: 'Ми чи iншi курси?' },
+    { href: '#reviews', label: 'Відгуки' },
+    { href: '#plans', label: 'Ціна' },
+    { href: '#contacts', label: 'Зв\'язатись' },
+  ],
+  social: [
+    {
+      href: 'tel:+38 093 967 90 96',
+      label: 'phone',
+      icon: 'PhoneIcon',
+    },
+    {
+      href: 'viber://chat?number=%2B380939679096',
+      label: 'viber',
+      icon: 'ViberIcon',
+    },
+    {
+      href: 'https://t.me/damir_expand',
+      label: 'telegram',
+      icon: 'TelegramIcon',
+    },
+    {
+      href: 'https://www.youtube.com/@expand_platform',
+      label: 'youtube',
+      icon: 'YouTubeIcon',
+    },
+  ],
+}
+
+const iconComponents = {
+  PhoneIcon,
+  ViberIcon,
+  TelegramIcon,
+  YouTubeIcon,
+};
+
 /* svg icons */
 import PhoneIcon from '@svg/social-icons/PhoneIcon.vue';
 import ViberIcon from '@svg/social-icons/ViberIcon.vue';
@@ -12,9 +51,8 @@ let iconSize = 42;
 </script>
 
 <template>
-  <div id="rec622692140" class="r t-rec t-rec_pt_0 t-rec_pb_0"
-    style="background-color: #ffffff" data-animationappear="off"
-    data-record-type="257" data-bg-color="#ffffff">
+  <div id="rec622692140" class="r t-rec t-rec_pt_0 t-rec_pb_0" style="background-color: #ffffff"
+    data-animationappear="off" data-record-type="257" data-bg-color="#ffffff">
 
     <div id="nav622692140marker"></div>
     <!-- ? mobile menu burger -->
@@ -56,33 +94,11 @@ let iconSize = 42;
         <div class="t228__centerside">
           <nav class="t228__centercontainer p-0">
             <ul role="list" class="t228__list t-menu__list t228__list_hidden p-0 m-0">
-              <li class="t228__list_item" style="padding: 0 15px 0 0">
-                <a class="t-menu__link-item" href="#features" data-menu-submenu-hook="" data-menu-item-number="1">
-                  Нашi фiшки
-                </a>
-              </li>
-
-              <li class="t228__list_item" style="padding: 0 15px 0 0">
-                <a class="t-menu__link-item" href="#compare" data-menu-submenu-hook="" data-menu-item-number="1">
-                  Ми vs iншi курси
-                </a>
-              </li>
-
-              <li class="t228__list_item" style="padding: 0 15px">
-                <a class="t-menu__link-item" href="#reviews" data-menu-submenu-hook="" data-menu-item-number="3">
-                  Що про нас кажуть?
-                </a>
-              </li>
-
-              <li class="t228__list_item" style="padding: 0 15px">
-                <a class="t-menu__link-item" href="#plans" data-menu-submenu-hook="" data-menu-item-number="2">
-                  Ціна
-                </a>
-              </li>
-
-              <li class="t228__list_item" style="padding: 0 15px">
-                <a class="t-menu__link-item" href="#contacts" data-menu-submenu-hook="" data-menu-item-number="5">
-                  Зв'язатись
+              <li v-for="(item, idx) in texts.menu" :key="idx" class="t228__list_item"
+                :style="'padding: 0 15px' + (idx < texts.menu.length - 2 ? ' 0 0' : '')">
+                <a class="t-menu__link-item" :href="item.href" data-menu-submenu-hook=""
+                  :data-menu-item-number="idx + 1">
+                  {{ item.label }}
                 </a>
               </li>
             </ul>
@@ -96,31 +112,11 @@ let iconSize = 42;
             <div class="t-sociallinks">
               <ul role="list" class="t-sociallinks__wrapper p-0 m-0" aria-label="Social media links">
 
-                <li class="t-sociallinks__item t-sociallinks__item_phone">
-                  <a href="tel:+38 093 967 90 96" target="_blank" rel="nofollow" aria-label="phone"
+                <li v-for="(item, idx) in texts.social" :key="idx"
+                  :class="'t-sociallinks__item t-sociallinks__item_' + item.icon.toLowerCase().replace('icon', '')">
+                  <a :href="item.href" target="_blank" rel="nofollow" :aria-label="item.label"
                     :style="{ width: iconSize + 'px', height: iconSize + 'px' }">
-                    <PhoneIcon />
-                  </a>
-                </li>
-
-                <li class="t-sociallinks__item t-sociallinks__item_viber">
-                  <a href="viber://chat?number=%2B380939679096" target="_blank" rel="nofollow" aria-label="viber"
-                    :style="{ width: iconSize + 'px', height: iconSize + 'px' }">
-                    <ViberIcon />
-                  </a>
-                </li>
-
-                <li class="t-sociallinks__item t-sociallinks__item_telegram">
-                  <a href="https://t.me/damir_expand" target="_blank" rel="nofollow" aria-label="telegram"
-                    :style="{ width: iconSize + 'px', height: iconSize + 'px' }">
-                    <TelegramIcon />
-                  </a>
-                </li>
-
-                <li class="t-sociallinks__item t-sociallinks__item_youtube">
-                  <a href="https://www.youtube.com/@expand_platform" target="_blank" rel="nofollow" aria-label="youtube"
-                    :style="{ width: iconSize + 'px', height: iconSize + 'px' }">
-                    <YouTubeIcon />
+                    <component :is="iconComponents[item.icon as keyof typeof iconComponents]" />
                   </a>
                 </li>
 
@@ -156,7 +152,9 @@ let iconSize = 42;
 /* header blocks */
 
 /* header inner blocks */
-.t228__leftside, .t228__rightside, .t228__centerside {
+.t228__leftside,
+.t228__rightside,
+.t228__centerside {
   display: block;
 }
 

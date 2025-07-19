@@ -1,5 +1,13 @@
 <script setup lang="ts">
 import ArrowDownIcon from '@svg/ArrowDownIcon.vue';
+
+const texts = {
+  title: "Знайти гарного вчителя важко",
+  subtitle: "Але я спробую вас здивувати",
+  // title: "Преміальні курси програмування",
+  // subtitle: "Європейський рівень викладання",
+}
+
 </script>
 
 <template>
@@ -29,9 +37,9 @@ import ArrowDownIcon from '@svg/ArrowDownIcon.vue';
                     </a>
                   </div>
                   <h1 class="t216__title t-title t-title_xl" field="title">
-                    Преміальні курси програмування
+                    {{texts.title}}
                   </h1>
-                  <h3 class="subtitle fw-light text-white fs-2">Європейський рівень викладання</h3>
+                  <h3 class="subtitle fw-light text-white fs-2">{{texts.subtitle}}</h3>
                   <span class="space"></span>
                 </div>
               </div>
