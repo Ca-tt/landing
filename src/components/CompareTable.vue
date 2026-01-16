@@ -1,34 +1,39 @@
 <script setup lang="ts">
 
 const texts = {
-  title: 'Якість, яку бачиш кожного урока',
+  title: 'Якість, яку бачиш на кожному занятті',
   descr: 'Заняття з Даміром VS занятя на інших курсах 🙃',
   tableTitle: 'Порівняння',
   tableOther: 'Інші курси',
   tableExpand: 'Школа EXPAND',
   rows: [
     {
-      left: 'Міні-групи по 2 студенти',
+      left: 'Консультації між заняттями',
       other: 'cross',
       expand: 'check',
     },
     {
-      left: 'Командні проекти під ключ',
+      left: 'Плавний перехід між рівнями',
       other: 'cross',
       expand: 'check',
     },
     {
-      left: 'Завжди є домашні завдання',
+      left: 'Додаткові завдання для проектів',
       other: 'cross',
       expand: 'check',
     },
     {
-      left: 'Звіти батькам про успіхи',
+      left: 'Групи по 2 студенти',
       other: 'cross',
       expand: 'check',
     },
     {
-      left: 'Фіксація ціни на 6 місяців',
+      left: 'Немає різких підйомів цін',
+      other: 'cross',
+      expand: 'check',
+    },
+    {
+      left: 'Персональні звіти про успіхи',
       other: 'cross',
       expand: 'check',
     },
@@ -38,9 +43,8 @@ const texts = {
 </script>
 
 <template>
-  <div id="compare" class="r t-rec t-rec_pb_150"
-    style="padding-top: 150px; padding-bottom: 150px; background-color: #eeeeee" data-animationappear="off"
-    data-record-type="613" data-bg-color="#eeeeee">
+  <div id="compare" class="r t-rec t-rec_pb_150" data-animationappear="off" data-record-type="613"
+    data-bg-color="#eeeeee">
     <div class="t613">
       <div class="t-section__container t-container t-container_flex">
         <div class="t-col t-col_12">
@@ -137,6 +141,17 @@ const texts = {
 </template>
 
 <style lang="scss" scoped>
+@use "@scss/base/media.scss";
+
+#compare {
+  background-color: #eeeeee;
+  padding: 50px 0;
+
+  @include media.tablet {
+    padding: 150px 0;
+  }
+}
+
 /**
 * ? table left text
 */

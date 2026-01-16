@@ -2,18 +2,18 @@
 import ArrowDownIcon from '@svg/ArrowDownIcon.vue';
 
 const texts = {
-  title: "Знайти гарного вчителя важко",
+  brandName: "Школа EXPAND",
+  title: "Знайти гарного вчителя",
+  title_highlighted: "важко",
   subtitle: "Але я спробую вас здивувати",
-  // title: "Преміальні курси програмування",
-  // subtitle: "Європейський рівень викладання",
 }
 
 </script>
 
 <template>
   <div id="rec622692141" class="r t-rec cover-wrapper" style="" data-animationappear="off" data-record-type="244">
+
     <div class="t-cover" id="recorddiv622692141" bgimgfield="img">
-      <!-- ? logo -->
       <div class="t-cover__carrier loaded" id="coverCarry622692141" data-content-cover-id="622692141"
         data-content-cover-bg="/images/tild3836-3031-4165-b739-393463636135__img_20220906_230151_.jpg"
         data-display-changed="true" data-content-cover-parallax="dynamic"
@@ -22,24 +22,30 @@ const texts = {
         <meta itemprop="image" content="/images/tild3836-3031-4165-b739-393463636135__img_20220906_230151_.jpg" />
       </div>
       <div class="t-cover__filter"></div>
-      <div class="t-container filter-container">
-        <div class="t-col t-col_12">
-          <div class="t-cover__wrapper t-valign_top">
-            <div class="t216 t-align_center">
+      <div class="t-container">
+
+        <div class="t-col t t-col_12">
+          <div class="t-cover__wrapper d-flex justify-content-center align-items-center">
+            <div class="t216">
               <div data-hook-content="covercontent">
+                <!-- ? logo -->
+                <div class="container w-auto">
+                  <section class="row justify-content-center">
+                    <div class="t216__blocklogo p-0">
+                      <a class="t216__logo-link" href="#features">
+                        <img src="/images/logo/expand.png" data-original="/images/logo/expand.png"
+                          class="t216__logo logo t-img" imgfield="img2" data-tu-max-width="800" data-tu-max-height="800"
+                          data-hook-clogo="coverlogo" alt="" />
+                      </a>
+                    </div>
+                  </section>
+                </div>
                 <div class="t216__wrapper">
-                  <div class="t216__blocklogo">
-                    <a class="t216__logo-link" href="#features" >
-                      <img src="/images/tild3537-6139-4138-b466-373438313637__expand-sqr.png"
-                        data-original="/images/tild3537-6139-4138-b466-373438313637__expand-sqr.png"
-                        class="t216__logo t-img" imgfield="img2" data-tu-max-width="800" data-tu-max-height="800"
-                        style="max-width: 150px; width: 100%; height: auto" data-hook-clogo="coverlogo" alt="" />
-                    </a>
-                  </div>
+                  <!-- ? texts -->
                   <h1 class="t216__title t-title t-title_xl" field="title">
-                    {{texts.title}}
+                    {{ texts.title }} <span class="title-highlighted">{{ texts.title_highlighted }}</span>
                   </h1>
-                  <h3 class="subtitle fw-light text-white fs-2">{{texts.subtitle}}</h3>
+                  <h3 class="subtitle fw-light text-white fs-2">{{ texts.subtitle }}</h3>
                   <span class="space"></span>
                 </div>
               </div>
@@ -58,7 +64,6 @@ const texts = {
           </div>
         </div>
       </div>
-      <!-- arrow -->
     </div>
   </div>
 
@@ -67,21 +72,41 @@ const texts = {
 <style lang="scss" scoped>
 @use "@scss/base/media.scss";
 
-
-/**
- * ! Cover section
- */
-
 .cover-wrapper {
-  --mobile-cover-height: 70vh;
+  --mobile-cover-height: 90vh;
   --desktop-cover-height: 100vh;
 }
+
+.logo {
+  --logo-size-mobile: 70px;
+  --logo-size-desktop: 150px;
+}
+
+.t216__title {
+  --title-font-size-mobile: 2.5rem;
+  --title-font-size-desktop: 4.5rem;
+}
+
 
 .t-cover {
   height: var(--mobile-cover-height);
 
   @include media.tablet {
     height: var(--desktop-cover-height);
+  }
+}
+
+.t216__wrapper {
+  padding: 0 0 2rem 0;
+}
+
+.logo {
+  max-width: var(--logo-size-mobile);
+  margin: 0 0 2rem 0;
+
+  @include media.tablet {
+    max-width: var(--logo-size-desktop);
+    margin: 0;
   }
 }
 
@@ -93,7 +118,7 @@ const texts = {
   }
 }
 
-.filter-container {
+.t-container {
   @include media.desktop {
     max-width: 50%;
   }
@@ -120,28 +145,33 @@ const texts = {
   }
 }
 
+.brand-name {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #bc2626;
+  font-weight: 600;
 
-/**
-* ? logo
-*/
-.t216__blocklogo {
-  padding: 2.5rem 0 1.5rem 0;
+  @include media.tablet {
+    font-size: 2.5rem;
+  }
 }
 
 .t216__title {
-  font-size: 2.5rem;
+  font-size: var(--title-font-size-mobile);
   text-align: center;
   word-break: auto-phrase;
   overflow-wrap: break-word;
-  margin: 0 0 1rem 0;
+  margin: 0 0 2rem 0;
   padding: 0;
 
   @include media.tablet {
     margin: 0 0 3rem 0;
-    font-size: 4.5rem;
+    font-size: var(--title-font-size-desktop);
     font-weight: 600;
   }
 }
+
 
 .subtitle {
   font-size: 1.75rem;

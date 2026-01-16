@@ -1,38 +1,55 @@
 <script setup lang="ts">
 
 const plans = {
-  title: "Ціни на заняття",
+  title: "Вартість занять",
   subtitle: "",
 }
 
 const firstContact = {
-  text: "Спробувати",
-  link: "tel:+380939679096",
+  link: "tel:+380633216796",
 }
 
 const groupPlans = [
   {
-    oldPrice: 'Вводне заняття',
+    oldPrice: 'Безкоштовно',
     title: 'Для нових студентів',
-    price: 'Безкоштовно',
+    price: 'Вводний урок',
     features: [
-      'Особисте знайомство',
-      'Визначаємо ваш поточний рівень',
-      'Консультація 30-45 хвилин',
-      'Фіксуємо ціну на перші півроку',
+      'Консультація 45 хвилин',
+      'Визначаємо ваш рівень знань',
+      'Обговорюємо цілі навчання',
+      'Фіксуємо ціну на півроку',
+      'Узгоджуємо графік',
     ],
     id: '2231',
+    buttonText: 'Безкоштовна консультація',
   },
   {
-    oldPrice: 'Персональні заняття',
-    title: 'Програмування, 5 мов на вибір',
-    price: '3200 грн / місяць',
+    oldPrice: '3500 грн / місяць',
+    title: '6 мов програмування на вибір',
+    price: 'Міні-група',
     features: [
       '4 заняття на місяць',
-      '90-120 хвилин уроку',
-      'Міні-група із 2-3 студентів',
+      'Заняття триває до 2 годин',
       'План навчання «під ключ»',
+      'Проекти, комплексне тренування',
+      'Бонус: 2 консультації на місяць',
     ],
+    buttonText: 'Записатись на вводний урок',
+    id: '3234',
+  },
+  {
+    oldPrice: '5200 грн / місяць',
+    title: 'Максимальний результат',
+    price: 'Заняття 1-на-1',
+    features: [
+      '4 заняття на місяць',
+      'Більше тренувань',
+      'Швидше вивчення матеріалу',
+      'Заняття триває до 2 годин',
+      'Бонус: 4 консультації на місяць',
+    ],
+    buttonText: 'Записатись на вводний урок',
     id: '3234',
   },
 ]
@@ -73,12 +90,9 @@ const groupPlans = [
                 {{ plan.price }}
               </div>
               <div class="t-card__descr t-descr t-descr_xs">
-                <ul>
-                  <li v-for="(feature, i) in plan.features" :key="i" data-list="bullet">
-                    <span
-                      v-if="feature.startsWith('Преміальна') || feature.match(/^\d+|^За місяць|^1 заняття|^8 занять|^12 занятть|^2 заняття|^1 заняття|^Пришвидшений|^За місяць/)"><strong>{{
-                        feature }}</strong></span>
-                    <span v-else>{{ feature }}</span>
+                <ul class="bullet">
+                  <li class="text-start" v-for="(feature, i) in plan.features" :key="i" data-list="bullet">
+                    <span>{{ feature }}</span>
                   </li>
                 </ul>
               </div>
@@ -90,7 +104,7 @@ const groupPlans = [
                         -moz-border-radius: 30px;
                         -webkit-border-radius: 30px;
                       " :data-buttonfieldset="'li_button'" :data-lid="plan.id">
-                  <span class="t1069__btn-title">{{ firstContact.text }}</span>
+                  <span class="t1069__btn-title">{{ plan.buttonText }}</span>
                 </div>
               </a>
             </div>
@@ -102,4 +116,21 @@ const groupPlans = [
 
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@use "@scss/base/media.scss";
+
+.bullet {
+  list-style-type: disc !important;
+  margin: 0 0 1rem 2rem !important;
+  text-align: left;
+  font-size: 1.1rem;
+
+  @include media.tablet {
+    font-size: 1.2rem;
+  }
+}
+
+.t-card__btn {
+  margin: 1rem 0 0 0 !important;
+}
+</style>

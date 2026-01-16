@@ -10,8 +10,7 @@ let sliderImages = [
 
 <template>
   <div id="reviews"></div>
-  <div id="rec815502760" class="r t-rec t-rec_pt_135 t-rec_pb_135" style="padding-top: 135px; padding-bottom: 135px"
-    data-record-type="605">
+  <div id="rec815502760" class="r t-rec t-rec_pt_135 t-rec_pb_135" data-record-type="605">
     <div class="t605 t605__witharrows">
       <div class="t-section__container t-container t-container_flex">
         <div class="t-col t-col_12">
@@ -161,6 +160,15 @@ let sliderImages = [
 
 <style lang="scss" scoped>
 @use "@scss/base/media.scss";
+
+#rec815502760 {
+  background-color: #f7f9fc;
+  padding: 50px 0;
+
+  @include media.tablet {
+    padding: 150px 0;
+  }
+}
 
 .slider-title {
   margin: 0 0 1rem 0;

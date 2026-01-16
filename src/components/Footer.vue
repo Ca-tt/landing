@@ -5,24 +5,29 @@ import TelegramIcon from '@svg/social-icons/TelegramIcon.vue';
 import YouTubeIcon from '@svg/social-icons/YouTubeIcon.vue';
 
 const texts = {
-  title: 'Практик, не теоретик',
-  name: 'Дамір: засновник школи EXPAND<br />Діючий Full Stack JavaScript / Python / PHP Developer',
-  descr: 'В IT з 2018 року',
-  phone: '+38 093 967 90 96',
-  phoneHref: 'tel:+380939679096',
+  title: 'Підтвержений Full-Stack розробник рівня Middle',
+  achievements: [
+    { label: 'В IT з 2015 року', id: 1 },
+    { label: 'Починав з верстальника сайтів', id: 2 },
+    { label: 'Працював керівником проектів', id: 2 },
+    { label: 'Заснував школу EXPAND в 2022 році', id: 0 },
+    { label: 'У вільний час займається фрілансом', id: 1 },
+  ],
+  phone: '+38 063 321 67 96',
+  phoneHref: 'tel:+380633216796',
   social: [
     {
-      href: 'tel:+380939679096',
+      href: 'tel:+380633216796',
       label: 'Телефон',
       icon: 'PhoneIcon',
     },
     {
-      href: 'viber://chat?number=%2B380939679096',
+      href: 'viber://chat?number=%2B380633216796',
       label: 'viber',
       icon: 'ViberIcon',
     },
     {
-      href: 'https://t.me/damir_teacher',
+      href: 'https://t.me/best_prepod',
       label: 'telegram',
       icon: 'TelegramIcon',
     },
@@ -60,26 +65,24 @@ const iconSize = 54;
           </h3>
           <div class="t578__itemwrapper t-margin_auto">
             <div class="t578__imgwrapper t-margin_auto" style="width: 250px">
-
               <!-- ? image -->
               <div class="t578__bgimg t-margin_auto t-bgimg" itemscope itemtype="http://schema.org/ImageObject">
                 <meta itemprop="image" content="/images/compressed-curly-hair.jpg" />
               </div>
             </div>
             <div class="t578__persname t-name t-name_lg mb-2" field="text2">
-              <span v-html="texts.name"></span>
-            </div>
-            <div class="t578__persdescr t-descr t-descr_xxs fs-6" field="descr">
-              {{ texts.descr }}
-            </div>
-          </div>
-          <div class="t578__text t-text t-text_sm t578__text-bottom-margin" field="text">
-            <div style="font-size: 24px" data-customstyle="yes">
-              <a :href="texts.phoneHref" target="_blank" rel="noreferrer noopener">{{ texts.phone }}</a>
+              <ul>
+                <li class="t578__persdescr t-descr t-descr_xxs fs-6" v-for="(item, idx) in texts.achievements"
+                  :key="idx">{{ item.label }}</li>
+              </ul>
             </div>
           </div>
-
-
+          <div class="phone-number-wrapper mb-4 t578__text t-text t-text_sm t578__text-bottom-margin" field="text">
+            <div data-customstyle="yes">
+              <a class="phone-number" :href="texts.phoneHref" target="_blank" rel="noreferrer noopener">{{ texts.phone
+                }}</a>
+            </div>
+          </div>
           <div class="t-sociallinks">
             <ul role="list" class="t-sociallinks__wrapper m-0 p-0 d-flex column-gap-2 justify-content-center"
               aria-label="Social media links">
@@ -99,11 +102,44 @@ const iconSize = 54;
 </template>
 
 <style lang="scss" scoped>
+@use "@scss/base/media.scss";
+
+
+.t-title.t-title_xs {
+  margin: 0 0 2rem 0;
+}
+
+.t-name.t-name_lg {
+  font-weight: normal;
+  text-align: left;
+  max-width: 100%;
+
+  @include media.tablet {
+    margin: 0 auto;
+    max-width: 50%;
+  }
+}
+
+.t-descr.t-descr_xxs {
+  font-size: 1.15rem !important;
+}
+
 .footer {
   --footer-image: url("/images/curly-hair/curly-hair-loaded.jpg");
 }
 
+.phone-number {
+  font-size: 1.5rem;
+  color: rgb(45, 145, 232);
+  font-weight: 600;
+}
+
+.t-sociallinks {
+  margin-top: 0;
+}
+
 .t578__bgimg {
   background-image: var(--footer-image);
+  margin: 0 0 3rem 0;
 }
 </style>

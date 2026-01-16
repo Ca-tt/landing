@@ -2,20 +2,20 @@
 
 const texts = {
   menu: [
-    { href: '#features', label: 'Переваги' },
-    { href: '#compare', label: 'Ми чи iншi курси?' },
+    { href: '#features', label: 'Про заняття' },
+    { href: '#compare', label: 'Порівняння' },
     { href: '#reviews', label: 'Відгуки' },
     { href: '#plans', label: 'Ціна' },
     { href: '#contacts', label: 'Зв\'язатись' },
   ],
   social: [
     {
-      href: 'tel:+38 093 967 90 96',
+      href: 'tel:+38 063 321 67 96',
       label: 'phone',
       icon: 'PhoneIcon',
     },
     {
-      href: 'viber://chat?number=%2B380939679096',
+      href: 'viber://chat?number=%2B380633216796',
       label: 'viber',
       icon: 'ViberIcon',
     },
@@ -95,7 +95,7 @@ let iconSize = 42;
           <nav class="t228__centercontainer p-0">
             <ul role="list" class="t228__list t-menu__list t228__list_hidden p-0 m-0">
               <li v-for="(item, idx) in texts.menu" :key="idx" class="t228__list_item"
-                :style="'padding: 0 15px' + (idx < texts.menu.length - 2 ? ' 0 0' : '')">
+                :style="'padding: 0 15px'">
                 <a class="t-menu__link-item" :href="item.href" data-menu-submenu-hook=""
                   :data-menu-item-number="idx + 1">
                   {{ item.label }}

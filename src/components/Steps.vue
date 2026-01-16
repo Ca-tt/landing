@@ -6,7 +6,7 @@ const texts = {
     {
       number: 1,
       title: '1. Вводний урок',
-      descr: 'Визначаємо рівень навичок <br />та першу мову програмування',
+      descr: 'Визначаємо рівень навичок <br />та першу мову програмування.<br />',
       flipped: false,
     },
     {
@@ -26,8 +26,7 @@ const texts = {
 </script>
 
 <template>
-  <div id="rec622692145" class="r t-rec t-rec_pt_120 t-rec_pb_150" style="padding-top: 120px; padding-bottom: 180px"
-    data-record-type="565">
+  <div id="rec622692145" class="r t-rec t-rec_pt_120 t-rec_pb_150" data-record-type="565">
     <div class="t565">
       <div class="t-section__container t-container t-container_flex">
         <div class="t-col t-col_12">
@@ -63,4 +62,23 @@ const texts = {
   </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@use "@scss/base/media.scss";
+
+#rec622692145 {
+  padding: 50px 0;
+
+  @include media.tablet {
+    padding: 150px 0;
+  }
+}
+
+.t565__title,
+.t565__descr {
+  font-size: 1.2rem !important;
+
+  @include media.tablet {
+    font-size: 1.5rem !important;
+  }
+}
+</style>
