@@ -1,8 +1,8 @@
 <script setup lang="ts">
 
 const plans = {
-  title: "Вартість занять",
-  subtitle: "",
+  title: "Заняття в міні-групах",
+  subtitle: "450 грн / година",
 }
 
 const firstContact = {
@@ -16,47 +16,48 @@ const groupPlans = [
     price: 'Вводний урок',
     features: [
       'Консультація 45 хвилин',
-      'Визначаємо ваш рівень знань',
+      'Визначаємо рівень знань',
       'Обговорюємо цілі навчання',
       'Фіксуємо ціну на півроку',
-      'Узгоджуємо графік',
+      'Узгоджуємо графік занять',
     ],
     id: '2231',
     buttonText: 'Безкоштовна консультація',
   },
   {
-    oldPrice: '3500 грн / місяць',
-    title: '6 мов програмування на вибір',
-    price: 'Міні-група',
+    oldPrice: '3600 грн / місяць',
+    title: 'Стандарт довгострокового навчання',
+    price: 'Міні-група 4х120',
     features: [
       '4 заняття на місяць',
-      'Заняття триває до 2 годин',
-      'План навчання «під ключ»',
-      'Проекти, комплексне тренування',
-      'Бонус: 2 консультації на місяць',
+      'Тривалість - 120 хвилин',
+      'Більше тренувань',
+      'Більше проектів',
+      'Швидше вивчення матеріалу',
     ],
-    buttonText: 'Записатись на вводний урок',
+    buttonText: 'Записатись на перший урок',
     id: '3234',
   },
   {
-    oldPrice: '5200 грн / місяць',
-    title: 'Максимальний результат',
-    price: 'Заняття 1-на-1',
+    oldPrice: '4200 грн / місяць',
+    title: 'Довгострокове навчання з бонусом',
+    price: 'Міні-група 4х120 + 1',
     features: [
       '4 заняття на місяць',
+      'Тривалість - 120 хвилин',
       'Більше тренувань',
-      'Швидше вивчення матеріалу',
-      'Заняття триває до 2 годин',
-      'Бонус: 4 консультації на місяць',
+      'Більше проектів',
+      'Одне бонусне заняття 1-на-1',
     ],
-    buttonText: 'Записатись на вводний урок',
+    buttonText: 'Записатись на перший урок',
     id: '3234',
   },
+
 ]
 </script>
 
 <template>
-  <div id="rec622703940" class="r t-rec" style="" data-record-type="215">
+  <div id="group-plans" class="r t-rec" style="" data-record-type="215">
     <a name="plans" style="font-size: 0"></a>
   </div>
   <div id="rec622692150" class="r t-rec t-rec_pb_150" style="padding-bottom: 150px" data-animationappear="off"
@@ -74,9 +75,9 @@ const groupPlans = [
         </div>
       </div>
       <div class="t-container t-card__container t1069__withfeatured">
-        <div class="t1069__row justify-content-center">
-          <div v-for="(plan, idx) in groupPlans" :key="plan.id"
-            class="t1069__col t-card__col t-col t-col_4 t-align_center" :class="{ 't1069__featured': plan.featured }">
+        <div class="row row-gap-5">
+          <div v-for="(plan, idx) in groupPlans" :key="plan.id" class="col col-4 t-align_center"
+            :class="{ 't1069__featured': plan.isHighlighted }">
             <div class="t1069__content" style="border: 1px solid #e0e6ed">
               <div class="t-card__title t-name t-name_lg">
                 <div style="font-size: 24px" data-customstyle="yes">
@@ -133,4 +134,8 @@ const groupPlans = [
 .t-card__btn {
   margin: 1rem 0 0 0 !important;
 }
+
+// .t1069__withfeatured .t1069__featured {
+//   margin: 0;
+// }
 </style>

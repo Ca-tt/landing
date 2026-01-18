@@ -2,10 +2,11 @@
 
 const texts = {
   menu: [
-    { href: '#features', label: 'Про заняття' },
+    { href: '#features', label: 'Про школу' },
     { href: '#compare', label: 'Порівняння' },
     { href: '#reviews', label: 'Відгуки' },
-    { href: '#plans', label: 'Ціна' },
+    { href: '#group-plans', label: 'Міні-групи' },
+    { href: '#personal-plans', label: 'Індивідуальні заняття' },
     { href: '#contacts', label: 'Зв\'язатись' },
   ],
   social: [

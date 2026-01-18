@@ -5,7 +5,8 @@ import Features from '@components/Features.vue';
 import CompareTable from '@/components/CompareTable.vue';
 import ReviewsSlider from '@/components/ReviewsSlider.vue';
 import Steps from '@/components/Steps.vue';
-import Plans from '@/components/Plans.vue';
+import GroupPlans from '@/components/GroupPlans.vue';
+import PersonalPlans from '@/components/PersonalPlans.vue';
 </script>
 
 <template>
@@ -31,7 +32,8 @@ import Plans from '@/components/Plans.vue';
       <CompareTable />
       <ReviewsSlider />
       <Steps />
-      <Plans />
+      <GroupPlans />
+      <PersonalPlans />
     </div>
   </main>
 </template>

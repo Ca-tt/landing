@@ -1,19 +1,29 @@
 <script setup lang="ts">
 
 const texts = {
-  title: 'Якість, яку бачиш на кожному занятті',
-  descr: 'Заняття з Даміром VS занятя на інших курсах 🙃',
+  title: 'Те, чого так не вистачає іншим курсам',
+  descr: 'Порівняйте самі',
   tableTitle: 'Порівняння',
   tableOther: 'Інші курси',
   tableExpand: 'Школа EXPAND',
   rows: [
     {
-      left: 'Консультації між заняттями',
+      left: 'Плавний перехід між рівнями',
       other: 'cross',
       expand: 'check',
     },
     {
-      left: 'Плавний перехід між рівнями',
+      left: 'Проекти, підібрані саме для вас',
+      other: 'cross',
+      expand: 'check',
+    },
+    {
+      left: 'Можливість спробувати 6 мов програмування',
+      other: 'cross',
+      expand: 'check',
+    },
+    {
+      left: 'Допомога посеред тижня',
       other: 'cross',
       expand: 'check',
     },
@@ -33,7 +43,7 @@ const texts = {
       expand: 'check',
     },
     {
-      left: 'Персональні звіти про успіхи',
+      left: 'Регулярні звіти по успіхам',
       other: 'cross',
       expand: 'check',
     },
@@ -57,8 +67,8 @@ const texts = {
         </div>
       </div>
 
-      <div class="t613__container t-container">
-        <div class="t613__content t-col t-col_10 t-prefix_1" data-auto-correct-mobile-width="false">
+      <div class="t613__container t-container row justify-content-center">
+        <div class="t613__content t-col t-col_10" data-auto-correct-mobile-width="false">
           <div class="t613__mobile" data-auto-correct-mobile-width="false">
             <div class="t613__wrapper" style="" data-auto-correct-mobile-width="false">
               <div class="t613__header" style="" data-auto-correct-mobile-width="false">

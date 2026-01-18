@@ -5,13 +5,13 @@ import TelegramIcon from '@svg/social-icons/TelegramIcon.vue';
 import YouTubeIcon from '@svg/social-icons/YouTubeIcon.vue';
 
 const texts = {
-  title: 'Підтвержений Full-Stack розробник рівня Middle',
+  title: 'Підтвержений Full-Stack розробник<br /> рівня Middle',
   achievements: [
     { label: 'В IT з 2015 року', id: 1 },
-    { label: 'Починав з верстальника сайтів', id: 2 },
-    { label: 'Працював керівником проектів', id: 2 },
-    { label: 'Заснував школу EXPAND в 2022 році', id: 0 },
-    { label: 'У вільний час займається фрілансом', id: 1 },
+    { label: 'Починав з верстальника сайтів у <a href="https://codevision.agency/" target="_blank" rel="noopener noreferrer">CodeVision agency</a>', id: 2 },
+    { label: 'Працював керівником проектів в студії <a href="https://demch.co" target="_blank" rel="noopener noreferrer">Demch.co</a>', id: 2 },
+    { label: 'Заснував школу програмування EXPAND в 2022 році', id: 0 },
+    { label: 'У вільний час допомагаю людям та бізнесам на <a href="https://freelancehunt.ua" target="_blank" rel="noopener noreferrer">freelancehunt.ua</a>', id: 1 },
   ],
   phone: '+38 063 321 67 96',
   phoneHref: 'tel:+380633216796',
@@ -52,48 +52,47 @@ const iconSize = 54;
 </script>
 
 <template>
-  <!-- footer (contacts) -->
   <div id="contacts" class="footer r t-rec t-rec_pt_90 t-rec_pb_90"
     style="padding-top: 90px; padding-bottom: 90px; background-color: #efefef" data-record-type="578"
     data-bg-color="#efefef">
-    <!-- t578-->
     <div class="t578">
-      <div class="t-container">
-        <div class="t-col t-col_8 t-prefix_2 t-align_center">
-          <h3 class="t578__title t-title t-title_xs" field="title">
-            {{ texts.title }}
-          </h3>
-          <div class="t578__itemwrapper t-margin_auto">
-            <div class="t578__imgwrapper t-margin_auto" style="width: 250px">
-              <!-- ? image -->
-              <div class="t578__bgimg t-margin_auto t-bgimg" itemscope itemtype="http://schema.org/ImageObject">
-                <meta itemprop="image" content="/images/compressed-curly-hair.jpg" />
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col col-8 text-center">
+            <h3 class="t578__title t-title t-title_xs" field="title" v-html="texts.title">
+            </h3>
+            <div class="t578__itemwrapper t-margin_auto">
+              <div class="t578__imgwrapper t-margin_auto" style="width: 250px">
+                <!-- ? image -->
+                <div class="t578__bgimg t-margin_auto t-bgimg" itemscope itemtype="http://schema.org/ImageObject">
+                  <meta itemprop="image" content="/images/compressed-curly-hair.jpg" />
+                </div>
+              </div>
+              <div class="t578__persname t-name t-name_lg mb-2" field="text2">
+                <ul class="bullet">
+                  <li class="t578__persdescr t-descr t-descr_xxs fs-6" v-for="(item, idx) in texts.achievements"
+                    :key="idx" v-html="item.label"></li>
+                </ul>
               </div>
             </div>
-            <div class="t578__persname t-name t-name_lg mb-2" field="text2">
-              <ul>
-                <li class="t578__persdescr t-descr t-descr_xxs fs-6" v-for="(item, idx) in texts.achievements"
-                  :key="idx">{{ item.label }}</li>
+            <div class="phone-number-wrapper mb-4 t578__text t-text t-text_sm t578__text-bottom-margin" field="text">
+              <div data-customstyle="yes">
+                <a class="phone-number" :href="texts.phoneHref" target="_blank" rel="noreferrer noopener">{{ texts.phone
+                }}</a>
+              </div>
+            </div>
+            <div class="t-sociallinks">
+              <ul role="list" class="t-sociallinks__wrapper m-0 p-0 d-flex column-gap-2 justify-content-center"
+                aria-label="Social media links">
+                <li v-for="(item, idx) in texts.social" :key="idx"
+                  :class="'t-sociallinks__item t-sociallinks__item_' + item.icon.toLowerCase().replace('icon', '')">
+                  <a :href="item.href" target="_blank" rel="nofollow" :aria-label="item.label"
+                    :style="{ width: iconSize + 'px', height: iconSize + 'px' }">
+                    <component :is="iconComponents[item.icon]" />
+                  </a>
+                </li>
               </ul>
             </div>
-          </div>
-          <div class="phone-number-wrapper mb-4 t578__text t-text t-text_sm t578__text-bottom-margin" field="text">
-            <div data-customstyle="yes">
-              <a class="phone-number" :href="texts.phoneHref" target="_blank" rel="noreferrer noopener">{{ texts.phone
-                }}</a>
-            </div>
-          </div>
-          <div class="t-sociallinks">
-            <ul role="list" class="t-sociallinks__wrapper m-0 p-0 d-flex column-gap-2 justify-content-center"
-              aria-label="Social media links">
-              <li v-for="(item, idx) in texts.social" :key="idx"
-                :class="'t-sociallinks__item t-sociallinks__item_' + item.icon.toLowerCase().replace('icon', '')">
-                <a :href="item.href" target="_blank" rel="nofollow" :aria-label="item.label"
-                  :style="{ width: iconSize + 'px', height: iconSize + 'px' }">
-                  <component :is="iconComponents[item.icon]" />
-                </a>
-              </li>
-            </ul>
           </div>
         </div>
       </div>
@@ -104,6 +103,16 @@ const iconSize = 54;
 <style lang="scss" scoped>
 @use "@scss/base/media.scss";
 
+.bullet {
+  list-style-type: disc !important;
+  margin: 0 0 1rem 2rem !important;
+  text-align: left;
+  font-size: 1.1rem;
+
+  @include media.tablet {
+    font-size: 1.2rem;
+  }
+}
 
 .t-title.t-title_xs {
   margin: 0 0 2rem 0;

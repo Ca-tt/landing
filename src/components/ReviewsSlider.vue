@@ -6,6 +6,10 @@ let sliderImages = [
   "/images/slider/slide-3.jpg",
 ]
 
+const texts = {
+  title: "5 напрямків навчання:<br />QA, Frontend, Backend, Fullstack, PM",
+}
+
 </script>
 
 <template>
@@ -17,7 +21,7 @@ let sliderImages = [
 
           <!-- ? title -->
           <div class="slider-title t-section__title t-title t-title_xs t-align_center t-margin_auto" field="btitle">
-            ⭐96% студентів рекомендують EXPAND
+            <span v-html="texts.title"></span>
           </div>
         </div>
       </div>
