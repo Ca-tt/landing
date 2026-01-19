@@ -4,6 +4,7 @@ export const headerTexts = {
     { href: '#group-plans', label: 'Курсові' },
     { href: '#personal-plans', label: 'Дипломні' },
     { href: '#reviews', label: 'Відгуки' },
+    { href: '/', label: 'Навчання' },
     { href: '#contacts', label: 'Замовити роботу' },
   ],
   social: [
