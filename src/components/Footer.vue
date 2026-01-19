@@ -74,12 +74,13 @@ const iconSize = 54;
 
 .bullet {
   list-style-type: disc !important;
-  margin: 0 0 1rem 2rem !important;
+  margin: 0 0 1rem 0 !important;
   text-align: left;
   font-size: 1.1rem;
 
   @include media.tablet {
     font-size: 1.2rem;
+    margin: 0 0 1rem 2rem !important;
   }
 }
 

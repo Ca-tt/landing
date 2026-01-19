@@ -1,7 +1,7 @@
 export const headerTexts = {
   menu: [
     { href: '#features', label: 'Про школу' },
-    { href: '#compare', label: 'Порівняння' },
+    { href: '#compare', label: 'Переваги' },
     { href: '#reviews', label: 'Відгуки' },
     { href: '#group-plans', label: 'Міні-групи' },
     { href: '#personal-plans', label: 'Індивідуальні заняття' },

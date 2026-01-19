@@ -25,7 +25,7 @@ const props = defineProps<{ texts?: typeof personalPlansTexts }>();
       </div>
       <div class="t-container t-card__container t1069__withfeatured">
         <div class="row row-gap-5">
-          <div v-for="(plan, idx) in  props.texts?.groupPlans" :key="plan.id" class="col col-4 t-align_center"
+          <div v-for="(plan, idx) in  props.texts?.groupPlans" :key="plan.id" class="card-wrapper col col-md-4 t-align_center"
             :class="{ 't1069__featured': plan.featured }">
             <div class="t1069__content" style="border: 1px solid #e0e6ed">
               <div class="t-card__title t-name t-name_lg">
@@ -82,5 +82,14 @@ const props = defineProps<{ texts?: typeof personalPlansTexts }>();
 
 .t-card__btn {
   margin: 1rem 0 0 0 !important;
+}
+
+
+.card-wrapper {
+  margin: 0 1rem;
+
+  @include media.tablet {
+    margin: 0;
+  }
 }
 </style>

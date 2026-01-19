@@ -22,33 +22,35 @@ const props = defineProps<{ texts?: typeof compareTableTexts }>();
       <div class="t613__container t-container row justify-content-center">
         <div class="t613__content t-col t-col_10" data-auto-correct-mobile-width="false">
           <div class="t613__mobile" data-auto-correct-mobile-width="false">
-            <div class="t613__wrapper" style="" data-auto-correct-mobile-width="false">
-              <div class="t613__header" style="" data-auto-correct-mobile-width="false">
-                <div class="t613__left" style="min-width: 260px; width: 260px">
+            <div class="t613__wrapper" data-auto-correct-mobile-width="false">
+              <div class="row t613__header" data-auto-correct-mobile-width="false">
+                <div class="col col-6 t613__left">
                   <div class="t613__title t613__header_title t-name t-name_md" field="title">
                     {{ props.texts?.tableTitle }}
                   </div>
                 </div>
-                <div class="t613__col t613__width_50 t-align_center" style="">
+                <div class="col col-3 t613__col t-align_center">
                   <div class="t613__title t613__header_title t-name t-name_md" field="title2">
                     {{ props.texts?.tableOther }}
                   </div>
                 </div>
-                <div class="t613__col t613__width_50 t-align_center" style="">
+                <div class="col col-3 t613__col t-align_center">
                   <div class="t613__title t613__header_title t-name t-name_md" field="title3">
                     {{ props.texts?.tableExpand }}
                   </div>
                 </div>
               </div>
+
+              <!-- middle -->
               <div class="t613__middle" data-auto-correct-mobile-width="false">
-                <div v-for="(row, idx) in props.texts?.rows" :key="idx" class="t613__middle_item" style=""
+                <div v-for="(row, idx) in props.texts?.rows" :key="idx" class="t613__middle_item"
                   data-auto-correct-mobile-width="false">
-                  <div class="t613__left t-valign_middle" style="min-width: 260px; width: 260px">
+                  <div class="col col-6 t613__left t-valign_middle">
                     <div class="t613__title t613__middle_title t-descr t-descr_xs">
                       {{ row.left }}
                     </div>
                   </div>
-                  <div class="t613__col t613__width_50 t-align_center t-valign_middle" style="">
+                  <div class="col t613__col t613__width_50 t-align_center t-valign_middle">
                     <div class="t613__title t613__middle_title t-descr t-descr_xs">
                       <svg v-if="row.other === 'cross'" role="img" width="24px" height="24px" viewBox="0 0 24 24"
                         version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -70,7 +72,7 @@ const props = defineProps<{ texts?: typeof compareTableTexts }>();
                       </svg>
                     </div>
                   </div>
-                  <div class="t613__col t613__width_50 t-align_center t-valign_middle" style="">
+                  <div class="col t613__col t613__width_50 t-align_center t-valign_middle">
                     <div class="t613__title t613__middle_title t-descr t-descr_xs">
                       <svg v-if="row.expand === 'check'" role="img" width="24px" height="24px" viewBox="0 0 24 24"
                         version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -114,10 +116,60 @@ const props = defineProps<{ texts?: typeof compareTableTexts }>();
   }
 }
 
-/**
-* ? table left text
-*/
+.t613__wrapper {
+  padding: 1rem;
+
+  @include media.tablet {
+    padding: 2rem;
+  }
+}
+
+.t613__left {
+width: auto;
+min-width: auto;
+}
+
+.t613-col {
+  display: block;
+  overflow: visible;
+}
+
+
+.t613__left.col-6 {
+  width: 50%;
+}
+
 .t613__title {
   font-size: 1rem;
+  padding: 0;
+
+  @include media.tablet {
+    padding: 0 0 1.25rem 0;
+  }
+}
+
+.t613__mobile {
+  padding: 0 .5rem;
+}
+
+.t613__content {
+  width: 100%;
+}
+
+.t613__header {
+  display: flex;
+}
+
+.t613__middle_item {
+  display: flex;
+  align-items: center;
+}
+
+.t613__middle_title.t-descr.t-descr_xs {
+  padding: 1rem 0;
+
+  @include media.tablet {
+    padding: 2rem 0;
+  }
 }
 </style>

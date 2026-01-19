@@ -1,11 +1,10 @@
 export const headerTexts = {
   menu: [
-    { href: '#features', label: 'Про школу' },
-    { href: '#compare', label: 'Порівняння' },
+    { href: '#features', label: 'Переваги' },
+    { href: '#group-plans', label: 'Курсові' },
+    { href: '#personal-plans', label: 'Дипломні' },
     { href: '#reviews', label: 'Відгуки' },
-    { href: '#group-plans', label: 'Міні-групи' },
-    { href: '#personal-plans', label: 'Індивідуальні заняття' },
-    { href: '#contacts', label: 'Зв\'язатись' },
+    { href: '#contacts', label: 'Замовити роботу' },
   ],
   social: [
     {
