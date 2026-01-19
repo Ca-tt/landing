@@ -100,10 +100,10 @@ setCoverHeight();
 
 
 .t-cover {
-  height: var(--mobile-cover-height);
+  height: var(--mobile-cover-height) !important;
 
   @include media.tablet {
-    height: var(--desktop-cover-height);
+    height: var(--desktop-cover-height) !important;
   }
 }
 
@@ -122,10 +122,10 @@ setCoverHeight();
 }
 
 .t-cover__carrier {
-  height: var(--mobile-cover-height);
+  height: var(--mobile-cover-height) !important;
 
   @include media.tablet {
-    height: var(--desktop-cover-height);
+    height: var(--desktop-cover-height) !important;
   }
 }
 
@@ -139,10 +139,10 @@ setCoverHeight();
   display: block;
   word-break: normal;
   width: auto;
-  height: var(--mobile-cover-height);
+  height: var(--mobile-cover-height) !important;
 
   @include media.tablet {
-    height: var(--desktop-cover-height);
+    height: var(--desktop-cover-height) !important;
   }
 }
 
