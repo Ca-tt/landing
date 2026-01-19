@@ -9,18 +9,18 @@ import GroupPlans from '@/components/GroupPlans.vue';
 import PersonalPlans from '@/components/PersonalPlans.vue';
 import Footer from '@components/Footer.vue';
 
-import { headerTexts } from '@/texts/school/header';
-import { coverTexts } from '@/texts/school/cover';
-import { featuresTexts } from '@/texts/school/features';
-import { compareTableTexts } from '@/texts/school/compareTable';
+import { headerTexts } from '@/texts/diploma/header';
+import { coverTexts } from '@/texts/diploma/cover';
+import { featuresTexts } from '@/texts/diploma/features';
+import { compareTableTexts } from '@/texts/diploma/compareTable';
 
-import { reviewsSliderTexts } from '@/texts/school/reviewsSlider';
-import { stepsTexts } from '@/texts/school/steps';
+import { reviewsSliderTexts } from '@/texts/diploma/reviewsSlider';
+import { stepsTexts } from '@/texts/diploma/steps';
 
-import { groupPlansTexts } from '@/texts/school/groupPlans';
-import { personalPlansTexts } from '@/texts/school/personalPlans';
+import { groupPlansTexts } from '@/texts/diploma/groupPlans';
+import { personalPlansTexts } from '@/texts/diploma/personalPlans';
 
-import { footerTexts } from '@/texts/school/footer';
+import { footerTexts } from '@/texts/diploma/footer';
 </script>
 
 <template>
@@ -40,11 +40,11 @@ import { footerTexts } from '@/texts/school/footer';
     <Header :texts="headerTexts" />
     <Cover :texts="coverTexts" />
     <Features :texts="featuresTexts" />
-    <CompareTable :texts="compareTableTexts" />
-    <ReviewsSlider :texts="reviewsSliderTexts" />
     <Steps :texts="stepsTexts" />
+    <!-- <CompareTable :texts="compareTableTexts" /> -->
     <GroupPlans :texts="groupPlansTexts" />
     <PersonalPlans :texts="personalPlansTexts" />
+    <ReviewsSlider :texts="reviewsSliderTexts" />
     <Footer :texts="footerTexts" />
   </div>
 </template>

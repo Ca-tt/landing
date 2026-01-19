@@ -1,14 +1,7 @@
 <script setup lang="ts">
+import { reviewsSliderTexts } from '@/texts/school/reviewsSlider';
 
-let sliderImages = [
-  "/images/slider/slide-1.jpg",
-  "/images/slider/slide-2.jpg",
-  "/images/slider/slide-3.jpg",
-]
-
-const texts = {
-  title: "5 напрямків навчання:<br />QA, Frontend, Backend, Fullstack, PM",
-}
+const props = defineProps<{ texts?: typeof reviewsSliderTexts }>();
 
 </script>
 
@@ -21,7 +14,7 @@ const texts = {
 
           <!-- ? title -->
           <div class="slider-title t-section__title t-title t-title_xs t-align_center t-margin_auto" field="btitle">
-            <span v-html="texts.title"></span>
+            <span v-html="props.texts?.title"></span>
           </div>
         </div>
       </div>
@@ -65,77 +58,30 @@ const texts = {
             <div class="t-slds__items-wrapper t-slds_animated-none" id="carousel_815502760" data-slider-transition="300"
               data-slider-with-cycle="true" data-slider-correct-height="true" data-auto-correct-mobile-width="false"
               aria-roledescription="carousel" aria-live="off">
-              <div class="t-slds__item t-slds__item_active" data-slide-index="1" role="group"
-                aria-roledescription="slide" aria-hidden="false" aria-label="1 из 3">
+              <div
+                v-for="(slide, idx) in props.texts?.slides"
+                :key="idx"
+                class="t-slds__item"
+                :class="{ 't-slds__item_active': idx === 0 }"
+                :data-slide-index="idx + 1"
+                role="group"
+                aria-roledescription="slide"
+                :aria-hidden="idx !== 0"
+                :aria-label="`${idx + 1} из 3`"
+              >
                 <div class="t-width t-width_7 t-margin_auto">
                   <div class="t-slds__wrapper t-align_center">
                     <div class="t605__bgimg t605__img_circle t-bgimg" data-animate-order="1">
-                      <img class="slide-image" :src="sliderImages[0]" alt="">
+                      <img class="slide-image" :src="slide.image" alt="" />
                     </div>
-
-                    <div class="t605__text t-text t-text_md" field="li_text__9747513717601" data-animate-order="2"
-                      data-animate-delay="0.3">
-                      Я й не думала, що треба стільки всього знати! Але ж як цікаво.
-                      <br />Слухай, а ми можемо зробити сайт для музикальних нот? Мої учні в
-                      музичній школі будуть в захваті
+                    <div class="t605__text t-text t-text_md" :field="`li_text__${idx}`" data-animate-order="2" data-animate-delay="0.3">
+                      <span v-html="slide.text"></span>
                     </div>
-                    <div class="t605__title t-name t-name_lg" field="li_title__9747513717601" data-animate-order="3"
-                      data-animate-delay="0.3">
-                      Ірина Гира
+                    <div class="t605__title t-name t-name_lg" :field="`li_title__${idx}`" data-animate-order="3" data-animate-delay="0.3">
+                      {{ slide.name }}
                     </div>
-                    <div class="t605__descr t-descr t-descr_xxs" field="li_descr__9747513717601" data-animate-order="4"
-                      data-animate-delay="0.2">
-                      Вивчає JavaScript та планує зробити сайт для своїх студентів
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="t-slds__item" data-slide-index="2" role="group" aria-roledescription="slide"
-                aria-hidden="true" aria-label="2 из 3">
-                <div class="t-width t-width_7 t-margin_auto">
-                  <div class="t-slds__wrapper t-align_center">
-                    <div class="t605__bgimg t605__img_circle t-bgimg" data-animate-order="1">
-                      <img class="slide-image" :src="sliderImages[1]" alt="" srcset="">
-                    </div>
-                    <div class="t605__text t-text t-text_md" field="li_text__9747513717600" data-animate-order="2"
-                      data-animate-delay="0.3">
-                      Дамір, завдяки вам наш Даня за літо пройшов Cisco PEP24 курс по пайтону.
-                      Зараз готується до сертифікації. Має до кінця місяця здати на перший
-                      сертифікат
-                    </div>
-                    <div class="t605__title t-name t-name_lg" field="li_title__9747513717600" data-animate-order="3"
-                      data-animate-delay="0.3">
-                      Роман Дьошин
-                    </div>
-                    <div class="t605__descr t-descr t-descr_xxs" field="li_descr__9747513717600" data-animate-order="4"
-                      data-animate-delay="0.2">
-                      Довірив нам навчання свого сина Дані в 2021 році
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="t-slds__item" data-slide-index="3" role="group" aria-roledescription="slide"
-                aria-hidden="true" aria-label="3 из 3">
-                <div class="t-width t-width_7 t-margin_auto">
-                  <div class="t-slds__wrapper t-align_center">
-                    <div class="t605__bgimg t605__img_circle t-bgimg" data-animate-order="1">
-                      <img class="slide-image" :src="sliderImages[2]" alt="">
-                    </div>
-                    <div class="t605__text t-text t-text_md" field="li_text__9747513717602" data-animate-order="2"
-                      data-animate-delay="0.3">
-                      Набагато краще, ніж на розрекламованих курсах у Борисполі! Я навіть і
-                      уявити не могла, що донька буде вчити програмування з таким захватом.
-                      Дякуємо!
-                    </div>
-                    <div class="t605__title t-name t-name_lg" field="li_title__9747513717602" data-animate-order="3"
-                      data-animate-delay="0.3">
-                      Жанна Верна
-                    </div>
-                    <div class="t605__descr t-descr t-descr_xxs" field="li_descr__9747513717602" data-animate-order="4"
-                      data-animate-delay="0.2">
-                      Донька Жанни, Діана, ходить на наші додаткові по вихідним
+                    <div class="t605__descr t-descr t-descr_xxs" :field="`li_descr__${idx}`" data-animate-order="4" data-animate-delay="0.2">
+                      {{ slide.descr }}
                     </div>
                   </div>
                 </div>
@@ -182,15 +128,13 @@ const texts = {
   }
 }
 
-/* slider image wrapper */
-.t605__img_circle {
-  margin: 1.5rem auto 0 auto;
-}
 
 /* image */
 .slide-image {
   max-width: 100%;
   border-radius: 50%;
+  object-fit: cover;
+  height: 150px;
 }
 
 /* slide text */

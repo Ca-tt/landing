@@ -1,43 +1,7 @@
 <script setup lang="ts">
+import { featuresTexts } from '@/texts/school/features';
 
-
-const texts = {
-  title: "Заняття,<br /> на яких 2 години пролітають за 5 хвилини",
-  subtitle: "Але я спробую вас переконати",
-}
-
-const cards = [
-  {
-    title: "Міні-групи по 2 студенти",
-    descr: "Ніяких груп по 10 чоловік.<br />Приділяю увагу кожному студенту",
-    img: "/images/svg/star.svg",
-  },
-  {
-    title: "6 мов програмування",
-    descr: "Всі популярні мови програмування: <br />Python, JavaScript, PHP, Java, C++, C#",
-    img: "/images/svg/settings.svg",
-  },
-  {
-    title: "Методика «трьох тренувань»",
-    descr: "Унікальна методика навчання,<br />взята зі спортивних змагань",
-    img: "/images/svg/phone.svg",
-  },
-  {
-    title: "Індивідуальні заняття",
-    descr: "Заняття 1-на-1 з ментором.<br />Максимальний результат за короткий час",
-    img: "/images/svg/kinder.svg",
-  },
-  {
-    title: "Заняття - по 2 години",
-    descr: "На 40-60 хвилин більше фокусу,<br />ніж на звичайних курсах",
-    img: "/images/svg/time-clock.svg",
-  },
-  {
-    title: "96% задоволених студентів",
-    descr: "Бо завжди на зв'язку, допомагаємо <br />посеред тижня та ставимось до вас як до друга",
-    img: "/images/svg/messages.svg",
-  },
-];
+const props = defineProps<{ texts?: typeof featuresTexts }>();
 
 </script>
 
@@ -56,7 +20,7 @@ const cards = [
       </div>
 
       <div class="t490__container t-card__container t-container">
-        <div v-for="(card, idx) in cards" :key="idx">
+        <div v-for="(card, idx) in props.texts?.cards" :key="idx">
           <!-- <div class="t-card__col t-card__col_withoutbtn t490__col t-col t-col_6 t-align_center t-item t-animate"
             data-animate-style="fadeindown" data-animate-chain="yes"> -->
           <div class="t-card__col t-card__col_withoutbtn t490__col t-col t-col_6 t-align_center t-item">
@@ -68,7 +32,7 @@ const cards = [
               <div class="t-card__descr t-descr t-descr_xs" v-html="card.descr"></div>
             </div>
           </div>
-          <div v-if="(idx + 1) % 2 === 0 && idx !== cards.length - 1" class="t-clear t490__separator" style=""></div>
+          <div v-if="(idx + 1) % 2 === 0 && idx !== props.texts?.cards.length - 1" class="t-clear t490__separator" style=""></div>
         </div>
       </div>
 

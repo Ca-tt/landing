@@ -1,28 +1,6 @@
 <script setup lang="ts">
-
-const texts = {
-  title: 'Як починається навчання?',
-  steps: [
-    {
-      number: 1,
-      title: '1. Вводний урок',
-      descr: 'Визначаємо рівень навичок <br />та першу мову програмування.<br />',
-      flipped: false,
-    },
-    {
-      number: 2,
-      title: '2. Підбираємо день та час заняття',
-      descr: 'Різні студенти — різні побажання<br />Оберемо графік, комфортний саме для вас',
-      flipped: true,
-    },
-    {
-      number: 3,
-      title: '3. Звіт за перший місяць',
-      descr: 'Перші успіхи — і перший <br />зворотній зв\'язок!',
-      flipped: false,
-    },
-  ],
-}
+import { stepsTexts } from '@/texts/school/steps';
+const props = defineProps<{ texts?: typeof stepsTexts }>();
 </script>
 
 <template>
@@ -31,13 +9,13 @@ const texts = {
       <div class="t-section__container t-container t-container_flex">
         <div class="t-col t-col_12">
           <div class="t-section__title t-title t-title_xs t-align_center t-margin_auto" field="btitle">
-            {{ texts.title }}
+            {{ props.texts?.title }}
           </div>
         </div>
       </div>
 
       <div class="t-container t565__container">
-        <div v-for="(step, idx) in texts.steps" :key="idx" class="t565__item t-item">
+        <div v-for="(step, idx) in props.texts?.steps" :key="idx" class="t565__item t-item">
           <div class="t-width t-width_10 t565__mainblock">
             <div :class="['t565__col', step.flipped ? 't565__flipped' : '']">
               <div class="t565__linewrapper">

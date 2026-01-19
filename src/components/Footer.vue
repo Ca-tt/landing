@@ -4,40 +4,9 @@ import ViberIcon from '@svg/social-icons/ViberIcon.vue';
 import TelegramIcon from '@svg/social-icons/TelegramIcon.vue';
 import YouTubeIcon from '@svg/social-icons/YouTubeIcon.vue';
 
-const texts = {
-  title: 'Підтвержений Full-Stack розробник<br /> рівня Middle',
-  achievements: [
-    { label: 'В IT з 2015 року', id: 1 },
-    { label: 'Починав з верстальника сайтів у <a href="https://codevision.agency/" target="_blank" rel="noopener noreferrer">CodeVision agency</a>', id: 2 },
-    { label: 'Працював керівником проектів в студії <a href="https://demch.co" target="_blank" rel="noopener noreferrer">Demch.co</a>', id: 2 },
-    { label: 'Заснував школу програмування EXPAND в 2022 році', id: 0 },
-    { label: 'У вільний час допомагаю людям та бізнесам на <a href="https://freelancehunt.ua" target="_blank" rel="noopener noreferrer">freelancehunt.ua</a>', id: 1 },
-  ],
-  phone: '+38 063 321 67 96',
-  phoneHref: 'tel:+380633216796',
-  social: [
-    {
-      href: 'tel:+380633216796',
-      label: 'Телефон',
-      icon: 'PhoneIcon',
-    },
-    {
-      href: 'viber://chat?number=%2B380633216796',
-      label: 'viber',
-      icon: 'ViberIcon',
-    },
-    {
-      href: 'https://t.me/best_prepod',
-      label: 'telegram',
-      icon: 'TelegramIcon',
-    },
-    {
-      href: 'https://www.youtube.com/@expand_platform',
-      label: 'youtube',
-      icon: 'YouTubeIcon',
-    },
-  ],
-}
+import { footerTexts } from '@/texts/school/footer';
+
+const props = defineProps<{ texts?: typeof footerTexts }>();
 
 const iconComponents = {
   PhoneIcon,
@@ -59,7 +28,7 @@ const iconSize = 54;
       <div class="container">
         <div class="row justify-content-center">
           <div class="col col-8 text-center">
-            <h3 class="t578__title t-title t-title_xs" field="title" v-html="texts.title">
+            <h3 class="t578__title t-title t-title_xs" field="title" v-html="props.texts?.title">
             </h3>
             <div class="t578__itemwrapper t-margin_auto">
               <div class="t578__imgwrapper t-margin_auto" style="width: 250px">
@@ -70,21 +39,21 @@ const iconSize = 54;
               </div>
               <div class="t578__persname t-name t-name_lg mb-2" field="text2">
                 <ul class="bullet">
-                  <li class="t578__persdescr t-descr t-descr_xxs fs-6" v-for="(item, idx) in texts.achievements"
+                  <li class="t578__persdescr t-descr t-descr_xxs fs-6" v-for="(item, idx) in props.texts?.achievements"
                     :key="idx" v-html="item.label"></li>
                 </ul>
               </div>
             </div>
             <div class="phone-number-wrapper mb-4 t578__text t-text t-text_sm t578__text-bottom-margin" field="text">
               <div data-customstyle="yes">
-                <a class="phone-number" :href="texts.phoneHref" target="_blank" rel="noreferrer noopener">{{ texts.phone
+                <a class="phone-number" :href="props.texts?.phoneHref" target="_blank" rel="noreferrer noopener">{{ props.texts?.phone
                 }}</a>
               </div>
             </div>
             <div class="t-sociallinks">
               <ul role="list" class="t-sociallinks__wrapper m-0 p-0 d-flex column-gap-2 justify-content-center"
                 aria-label="Social media links">
-                <li v-for="(item, idx) in texts.social" :key="idx"
+                <li v-for="(item, idx) in props.texts?.social" :key="idx"
                   :class="'t-sociallinks__item t-sociallinks__item_' + item.icon.toLowerCase().replace('icon', '')">
                   <a :href="item.href" target="_blank" rel="nofollow" :aria-label="item.label"
                     :style="{ width: iconSize + 'px', height: iconSize + 'px' }">

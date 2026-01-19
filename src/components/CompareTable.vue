@@ -1,55 +1,7 @@
 <script setup lang="ts">
+import { compareTableTexts } from '@/texts/school/compareTable';
 
-const texts = {
-  title: 'Те, чого так не вистачає іншим курсам',
-  descr: 'Порівняйте самі',
-  tableTitle: 'Порівняння',
-  tableOther: 'Інші курси',
-  tableExpand: 'Школа EXPAND',
-  rows: [
-    {
-      left: 'Плавний перехід між рівнями',
-      other: 'cross',
-      expand: 'check',
-    },
-    {
-      left: 'Проекти, підібрані саме для вас',
-      other: 'cross',
-      expand: 'check',
-    },
-    {
-      left: 'Можливість спробувати 6 мов програмування',
-      other: 'cross',
-      expand: 'check',
-    },
-    {
-      left: 'Допомога посеред тижня',
-      other: 'cross',
-      expand: 'check',
-    },
-    {
-      left: 'Додаткові завдання для проектів',
-      other: 'cross',
-      expand: 'check',
-    },
-    {
-      left: 'Групи по 2 студенти',
-      other: 'cross',
-      expand: 'check',
-    },
-    {
-      left: 'Немає різких підйомів цін',
-      other: 'cross',
-      expand: 'check',
-    },
-    {
-      left: 'Регулярні звіти по успіхам',
-      other: 'cross',
-      expand: 'check',
-    },
-  ],
-}
-
+const props = defineProps<{ texts?: typeof compareTableTexts }>();
 </script>
 
 <template>
@@ -59,10 +11,10 @@ const texts = {
       <div class="t-section__container t-container t-container_flex">
         <div class="t-col t-col_12">
           <div class="t-section__title t-title t-title_xs t-align_center t-margin_auto mb-3" field="btitle">
-            {{ texts.title }}
+            {{ props.texts?.title }}
           </div>
           <div class="t-section__descr t-descr t-descr_xl t-align_center t-margin_auto mb-5" field="bdescr">
-            <span v-html="texts.descr"></span>
+            <span v-html="props.texts?.descr"></span>
           </div>
         </div>
       </div>
@@ -74,22 +26,22 @@ const texts = {
               <div class="t613__header" style="" data-auto-correct-mobile-width="false">
                 <div class="t613__left" style="min-width: 260px; width: 260px">
                   <div class="t613__title t613__header_title t-name t-name_md" field="title">
-                    {{ texts.tableTitle }}
+                    {{ props.texts?.tableTitle }}
                   </div>
                 </div>
                 <div class="t613__col t613__width_50 t-align_center" style="">
                   <div class="t613__title t613__header_title t-name t-name_md" field="title2">
-                    {{ texts.tableOther }}
+                    {{ props.texts?.tableOther }}
                   </div>
                 </div>
                 <div class="t613__col t613__width_50 t-align_center" style="">
                   <div class="t613__title t613__header_title t-name t-name_md" field="title3">
-                    {{ texts.tableExpand }}
+                    {{ props.texts?.tableExpand }}
                   </div>
                 </div>
               </div>
               <div class="t613__middle" data-auto-correct-mobile-width="false">
-                <div v-for="(row, idx) in texts.rows" :key="idx" class="t613__middle_item" style=""
+                <div v-for="(row, idx) in props.texts?.rows" :key="idx" class="t613__middle_item" style=""
                   data-auto-correct-mobile-width="false">
                   <div class="t613__left t-valign_middle" style="min-width: 260px; width: 260px">
                     <div class="t613__title t613__middle_title t-descr t-descr_xs">

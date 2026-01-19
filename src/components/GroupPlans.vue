@@ -1,59 +1,8 @@
 <script setup lang="ts">
+import { groupPlansTexts } from '@/texts/school/groupPlans';
 
-const plans = {
-  title: "Заняття в міні-групах",
-  subtitle: "450 грн / година",
-}
+const props = defineProps<{ texts?: typeof groupPlansTexts }>();
 
-const firstContact = {
-  link: "tel:+380633216796",
-}
-
-const groupPlans = [
-  {
-    oldPrice: 'Безкоштовно',
-    title: 'Для нових студентів',
-    price: 'Вводний урок',
-    features: [
-      'Консультація 45 хвилин',
-      'Визначаємо рівень знань',
-      'Обговорюємо цілі навчання',
-      'Фіксуємо ціну на півроку',
-      'Узгоджуємо графік занять',
-    ],
-    id: '2231',
-    buttonText: 'Безкоштовна консультація',
-  },
-  {
-    oldPrice: '3600 грн / місяць',
-    title: 'Стандарт довгострокового навчання',
-    price: 'Міні-група 4х120',
-    features: [
-      '4 заняття на місяць',
-      'Тривалість - 120 хвилин',
-      'Більше тренувань',
-      'Більше проектів',
-      'Швидше вивчення матеріалу',
-    ],
-    buttonText: 'Записатись на перший урок',
-    id: '3234',
-  },
-  {
-    oldPrice: '4200 грн / місяць',
-    title: 'Довгострокове навчання з бонусом',
-    price: 'Міні-група 4х120 + 1',
-    features: [
-      '4 заняття на місяць',
-      'Тривалість - 120 хвилин',
-      'Більше тренувань',
-      'Більше проектів',
-      'Одне бонусне заняття 1-на-1',
-    ],
-    buttonText: 'Записатись на перший урок',
-    id: '3234',
-  },
-
-]
 </script>
 
 <template>
@@ -66,17 +15,17 @@ const groupPlans = [
       <div class="t-section__container t-container t-container_flex">
         <div class="t-col t-col_12">
           <div class="t-section__title t-title t-title_xs t-align_center t-margin_auto mb-3" field="btitle">
-            {{ plans.title }}
+            {{ props.texts?.plans.title }}
           </div>
           <div class="t-section__descr t-descr t-descr_xl t-align_center t-margin_auto mb-5" field="bdescr"
-            v-html="plans.subtitle">
+            v-html="props.texts?.plans.subtitle">
 
           </div>
         </div>
       </div>
       <div class="t-container t-card__container t1069__withfeatured">
         <div class="row row-gap-5">
-          <div v-for="(plan, idx) in groupPlans" :key="plan.id" class="col col-4 t-align_center"
+          <div v-for="(plan, idx) in props.texts?.groupPlans" :key="plan.id" class="col col-4 t-align_center"
             :class="{ 't1069__featured': plan.isHighlighted }">
             <div class="t1069__content" style="border: 1px solid #e0e6ed">
               <div class="t-card__title t-name t-name_lg">
@@ -97,7 +46,7 @@ const groupPlans = [
                   </li>
                 </ul>
               </div>
-              <a :href="firstContact.link" class="t-card__link">
+              <a :href="props.texts?.firstContact.link" class="t-card__link">
                 <div class="t-card__btn t-btn t-btn_sm" style="
                         color: #ffffff;
                         background-color: #13ce66;
@@ -137,5 +86,4 @@ const groupPlans = [
 
 // .t1069__withfeatured .t1069__featured {
 //   margin: 0;
-// }
-</style>
+// }</style>

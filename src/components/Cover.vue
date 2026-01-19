@@ -1,12 +1,8 @@
 <script setup lang="ts">
 import ArrowDownIcon from '@svg/ArrowDownIcon.vue';
+import { coverTexts } from '@/texts/school/cover';
 
-const texts = {
-  brandName: "Школа EXPAND",
-  title: "Знайти гарного вчителя",
-  title_highlighted: "важко",
-  subtitle: "Але я спробую вас здивувати",
-}
+const props = defineProps<{ texts?: typeof coverTexts }>();
 
 </script>
 
@@ -43,9 +39,9 @@ const texts = {
                 <div class="t216__wrapper">
                   <!-- ? texts -->
                   <h1 class="t216__title t-title t-title_xl" field="title">
-                    {{ texts.title }} <span class="title-highlighted">{{ texts.title_highlighted }}</span>
+                    {{ props.texts?.title }}<br /> <span class="title-highlighted">{{ props.texts?.title_highlighted }}</span>
                   </h1>
-                  <h3 class="subtitle fw-light text-white fs-2">{{ texts.subtitle }}</h3>
+                  <h3 class="subtitle fw-light text-white fs-2">{{ props.texts?.subtitle }}</h3>
                   <span class="space"></span>
                 </div>
               </div>

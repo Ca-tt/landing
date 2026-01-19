@@ -1,37 +1,6 @@
 <script setup lang="ts">
-
-const texts = {
-  menu: [
-    { href: '#features', label: 'Про школу' },
-    { href: '#compare', label: 'Порівняння' },
-    { href: '#reviews', label: 'Відгуки' },
-    { href: '#group-plans', label: 'Міні-групи' },
-    { href: '#personal-plans', label: 'Індивідуальні заняття' },
-    { href: '#contacts', label: 'Зв\'язатись' },
-  ],
-  social: [
-    {
-      href: 'tel:+38 063 321 67 96',
-      label: 'phone',
-      icon: 'PhoneIcon',
-    },
-    {
-      href: 'viber://chat?number=%2B380633216796',
-      label: 'viber',
-      icon: 'ViberIcon',
-    },
-    {
-      href: 'https://t.me/damir_expand',
-      label: 'telegram',
-      icon: 'TelegramIcon',
-    },
-    {
-      href: 'https://www.youtube.com/@expand_platform',
-      label: 'youtube',
-      icon: 'YouTubeIcon',
-    },
-  ],
-}
+import { headerTexts } from '@/texts/school/header';
+const props = defineProps<{ texts?: headerTexts }>();
 
 const iconComponents = {
   PhoneIcon,
@@ -45,7 +14,6 @@ import PhoneIcon from '@svg/social-icons/PhoneIcon.vue';
 import ViberIcon from '@svg/social-icons/ViberIcon.vue';
 import TelegramIcon from '@svg/social-icons/TelegramIcon.vue';
 import YouTubeIcon from '@svg/social-icons/YouTubeIcon.vue';
-
 
 let iconSize = 42;
 
@@ -84,8 +52,7 @@ let iconSize = 42;
         <div class="t228__leftside py-2">
           <div class="t228__leftcontainer p-0">
             <a href="/" class="t228__imgwrapper">
-              <img class="t228__imglogo t228__imglogomobile m-0 p-0"
-                src="/images/tild6534-3132-4064-a561-383963393838__expand-sqr.png" imgfield="img"
+              <img class="t228__imglogo t228__imglogomobile m-0 p-0" src="/images/logo/expand.png" imgfield="img"
                 style="max-width: 85px;" alt="" />
             </a>
           </div>
@@ -95,7 +62,7 @@ let iconSize = 42;
         <div class="t228__centerside">
           <nav class="t228__centercontainer p-0">
             <ul role="list" class="t228__list t-menu__list t228__list_hidden p-0 m-0">
-              <li v-for="(item, idx) in texts.menu" :key="idx" class="t228__list_item"
+              <li v-for="(item, idx) in props.texts?.menu" :key="idx" class="t228__list_item"
                 :style="'padding: 0 15px'">
                 <a class="t-menu__link-item" :href="item.href" data-menu-submenu-hook=""
                   :data-menu-item-number="idx + 1">
@@ -113,7 +80,7 @@ let iconSize = 42;
             <div class="t-sociallinks">
               <ul role="list" class="t-sociallinks__wrapper p-0 m-0" aria-label="Social media links">
 
-                <li v-for="(item, idx) in texts.social" :key="idx"
+                <li v-for="(item, idx) in props.texts?.social" :key="idx"
                   :class="'t-sociallinks__item t-sociallinks__item_' + item.icon.toLowerCase().replace('icon', '')">
                   <a :href="item.href" target="_blank" rel="nofollow" :aria-label="item.label"
                     :style="{ width: iconSize + 'px', height: iconSize + 'px' }">
