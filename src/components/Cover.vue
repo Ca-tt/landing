@@ -1,8 +1,21 @@
 <script setup lang="ts">
 import ArrowDownIcon from '@svg/ArrowDownIcon.vue';
 import { coverTexts } from '@/texts/school/cover';
+import {ref} from "vue";
 
 const props = defineProps<{ texts?: typeof coverTexts }>();
+
+let coverFilter = ref<HTMLElement|null>(null);
+
+function setCoverHeight() {
+  if (window.innerWidth <= 768) {
+    coverFilter.value?.style.setProperty('--mobile-cover-height', `90vh !important`);
+  } else {
+    coverFilter.value?.style.setProperty('--desktop-cover-height', `100vh !important`);
+  }
+}
+
+setCoverHeight();
 
 </script>
 
@@ -17,7 +30,7 @@ const props = defineProps<{ texts?: typeof coverTexts }>();
         itemscope itemtype="http://schema.org/ImageObject">
         <meta itemprop="image" content="/images/tild3836-3031-4165-b739-393463636135__img_20220906_230151_.jpg" />
       </div>
-      <div class="t-cover__filter"></div>
+      <div class="t-cover__filter" ref="coverFilter"></div>
       <div class="t-container">
 
         <div class="t-col t t-col_12">
@@ -30,7 +43,7 @@ const props = defineProps<{ texts?: typeof coverTexts }>();
                     <div class="t216__blocklogo p-0">
                       <a class="t216__logo-link" href="#features">
                         <img src="/images/logo/expand.png" data-original="/images/logo/expand.png"
-                          class="t216__logo logo t-img" imgfield="img2" data-tu-max-width="800" data-tu-max-height="800"
+                          class="t216__logo logo t-img" imgfield="img2" data-tu-max-width="1000" data-tu-max-height="1000"
                           data-hook-clogo="coverlogo" alt="" />
                       </a>
                     </div>
