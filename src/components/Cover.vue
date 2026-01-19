@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import ArrowDownIcon from '@svg/ArrowDownIcon.vue';
 import { coverTexts } from '@/texts/school/cover';
-import {ref} from "vue";
+import { ref } from "vue";
 
 const props = defineProps<{ texts?: typeof coverTexts }>();
 
-let coverFilter = ref<HTMLElement|null>(null);
+let coverFilter = ref<HTMLElement | null>(null);
 
 function setCoverHeight() {
+  coverFilter.value?.style.removeProperty("height");
   if (window.innerWidth <= 768) {
     coverFilter.value?.style.setProperty('--mobile-cover-height', `90vh !important`);
   } else {
@@ -43,8 +44,8 @@ setCoverHeight();
                     <div class="t216__blocklogo p-0">
                       <a class="t216__logo-link" href="#features">
                         <img src="/images/logo/expand.png" data-original="/images/logo/expand.png"
-                          class="t216__logo logo t-img" imgfield="img2" data-tu-max-width="1000" data-tu-max-height="1000"
-                          data-hook-clogo="coverlogo" alt="" />
+                          class="t216__logo logo t-img" imgfield="img2" data-tu-max-width="1000"
+                          data-tu-max-height="1000" data-hook-clogo="coverlogo" alt="" />
                       </a>
                     </div>
                   </section>
@@ -52,7 +53,8 @@ setCoverHeight();
                 <div class="t216__wrapper">
                   <!-- ? texts -->
                   <h1 class="t216__title t-title t-title_xl" field="title">
-                    {{ props.texts?.title }}<br /> <span class="title-highlighted">{{ props.texts?.title_highlighted }}</span>
+                    {{ props.texts?.title }}<br /> <span class="title-highlighted">{{ props.texts?.title_highlighted
+                    }}</span>
                   </h1>
                   <h3 class="subtitle fw-light text-white fs-2">{{ props.texts?.subtitle }}</h3>
                   <span class="space"></span>
@@ -145,12 +147,12 @@ setCoverHeight();
 }
 
 .t-cover__filter {
-  height: var(--mobile-cover-height);
+  height: var(--mobile-cover-height) !important;
   background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
 
   @include media.desktop {
     background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7));
-    height: var(--desktop-cover-height);
+    height: var(--desktop-cover-height) !important;
   }
 }
 
